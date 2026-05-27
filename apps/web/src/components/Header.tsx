@@ -7,11 +7,11 @@ export function Header() {
     <header className="header">
       <Link href="/" className="brand">
         <img aria-hidden="true" className="brand-logo" src="/oopsenheimer.svg" alt="" />
-        <span>Oops-enheimer</span>
+        <span>Օփսենհայմեր</span>
       </Link>
-      <nav className="header-nav" aria-label="Primary">
+      <nav className="header-nav" aria-label="Հիմնական">
         <BackendStatus />
-        <Link href="/">Workbench</Link>
+        <Link href="/">Աշխատասեղան</Link>
       </nav>
     </header>
   );

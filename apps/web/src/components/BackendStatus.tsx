@@ -33,7 +33,10 @@ export function BackendStatus() {
 
   const mode = health?.simMode;
   const modeClass = mode === "fluka" ? "backend-fluka" : mode === "mock" ? "backend-mock" : "";
-  const label = state === "ok" && mode ? `API ${mode}` : `API ${state}`;
+  const modeLabel = mode === "fluka" ? "FLUKA" : mode === "mock" ? "փորձնական" : mode;
+  const stateLabel =
+    state === "checking" ? "ստուգվում է" : state === "offline" ? "անջատված է" : "աշխատում է";
+  const label = state === "ok" && modeLabel ? `API ${modeLabel}` : `API ${stateLabel}`;
 
   return <span className={`backend-status backend-${state} ${modeClass}`}>{label}</span>;
 }

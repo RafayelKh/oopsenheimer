@@ -7,14 +7,14 @@ type SceneViewerProps = {
   title?: string;
 };
 
-export function SceneViewer({ title = "Scene viewer" }: SceneViewerProps) {
+export function SceneViewer({ title = "Տեսարանի դիտում" }: SceneViewerProps) {
   return (
     <section className="panel scene-viewer">
       <div className="panel-header">
         <strong>{title}</strong>
-        <span className="muted">air hidden</span>
+        <span className="muted">օդը թաքցված է</span>
       </div>
-      <div className="voxel-stage" aria-label="Voxel scene">
+      <div className="voxel-stage" aria-label="Վոքսելային տեսարան">
         <Canvas camera={{ position: [26, 20, 24], fov: 42 }} shadows>
           <color attach="background" args={["#0b0d0a"]} />
           <ambientLight intensity={0.65} />

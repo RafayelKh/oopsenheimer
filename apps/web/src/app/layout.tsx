@@ -3,8 +3,8 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Oops-enheimer",
-  description: "Voxel radiation simulation sandbox",
+  title: "Օփսենհայմեր",
+  description: "Վոքսելային ճառագայթման սիմուլյացիայի միջավայր",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="hy">
       <body>
         <div className="app-shell">
           <Header />

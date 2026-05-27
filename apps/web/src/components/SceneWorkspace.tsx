@@ -26,7 +26,7 @@ export function SceneWorkspace({ sceneId }: SceneWorkspaceProps) {
       })
       .catch((caught) => {
         if (active) {
-          setError(caught instanceof Error ? caught.message : "Failed to load scene.");
+          setError(caught instanceof Error ? caught.message : "Չհաջողվեց բեռնել տեսարանը։");
         }
       });
 
@@ -43,7 +43,7 @@ export function SceneWorkspace({ sceneId }: SceneWorkspaceProps) {
     return (
       <section className="panel">
         <div className="panel-header">
-          <strong>Loading scene</strong>
+          <strong>Տեսարանը բեռնվում է</strong>
           <span className="muted">{sceneId}</span>
         </div>
       </section>

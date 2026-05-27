@@ -45,19 +45,19 @@ export function HeatmapPanel({ parsedResult, simulationId }: HeatmapPanelProps) 
           artifactDownloadUrl(simulationId, `parsed/${parsedResult.valuesFile}`),
         );
         if (!response.ok) {
-          throw new Error(`Dose artifact request failed with ${response.status}`);
+          throw new Error(`Դոզայի արտեֆակտի հարցումը ձախողվեց՝ կարգավիճակ ${response.status}`);
         }
         const parsed = parseNpyFloat32(await response.arrayBuffer());
         const expectedCount = parsedResult.dims[0] * parsedResult.dims[1] * parsedResult.dims[2];
         if (parsed.values.length !== expectedCount) {
-          throw new Error(`Dose array has ${parsed.values.length} values, expected ${expectedCount}`);
+          throw new Error(`Դոզայի զանգվածում կա ${parsed.values.length} արժեք, սպասվում էր ${expectedCount}`);
         }
         if (active) {
           setDoseValues(parsed.values);
         }
       } catch (caught) {
         if (active) {
-          setLoadError(caught instanceof Error ? caught.message : "Failed to load dose array.");
+          setLoadError(caught instanceof Error ? caught.message : "Չհաջողվեց բեռնել դոզայի զանգվածը։");
         }
       }
     }
@@ -75,18 +75,19 @@ export function HeatmapPanel({ parsedResult, simulationId }: HeatmapPanelProps) 
   const isRealDose = Boolean(doseValues);
   const simMode = parsedResult?.simMode ?? parsedResult?.source;
   const unit = doseUnit(result.quantity, result.unit);
+  const quantityLabel = result.quantity?.toUpperCase().startsWith("DOSE") ? "Դոզա" : result.quantity;
 
   return (
     <section className="panel">
       <div className="panel-header">
-        <strong>Dose slice</strong>
+        <strong>Դոզայի շերտ</strong>
         <span className="muted">
-          {result.quantity} {formatDoseWithUnit(result.min, unit)}-{formatDoseWithUnit(result.max, unit)}
+          {quantityLabel} {formatDoseWithUnit(result.min, unit)}-{formatDoseWithUnit(result.max, unit)}
         </span>
       </div>
       <div className="panel-body heatmap-panel">
         <div className="heatmap-controls">
-          <div className="segmented-control" aria-label="Slice axis">
+          <div className="segmented-control" aria-label="Շերտի առանցք">
             {(["x", "y", "z"] as Axis[]).map((nextAxis) => (
               <button
                 key={nextAxis}
@@ -102,7 +103,7 @@ export function HeatmapPanel({ parsedResult, simulationId }: HeatmapPanelProps) 
             ))}
           </div>
           <label className="slice-control">
-            <span>Slice {clampedSlice}</span>
+            <span>Շերտ {clampedSlice}</span>
             <input
               type="range"
               min={0}
@@ -115,16 +116,16 @@ export function HeatmapPanel({ parsedResult, simulationId }: HeatmapPanelProps) 
         {loadError ? <div className="error-text">{loadError}</div> : null}
         {simMode === "mock" ? (
           <div className="error-text">
-            Mock mode result: this is synthetic and will not respond to geometry changes.
+            Փորձնական ռեժիմի արդյունք․ սա սինթետիկ է և չի արձագանքի երկրաչափության փոփոխություններին։
           </div>
         ) : null}
         <div className="muted heatmap-source">
-          {isRealDose ? `rendering ${parsedResult?.source ?? "dose_map.npy"}` : "preview values"}
+          {isRealDose ? `ցուցադրվում է ${parsedResult?.source ?? "dose_map.npy"}` : "նախադիտման արժեքներ"}
         </div>
         <div
           className="heatmap-grid"
           style={{ gridTemplateColumns: `repeat(${cells.columns}, minmax(8px, 1fr))` }}
-          aria-label="Dose heatmap slice"
+          aria-label="Դոզայի ջերմաքարտեզի շերտ"
         >
           {cells.values.map((value, index) => (
             <span

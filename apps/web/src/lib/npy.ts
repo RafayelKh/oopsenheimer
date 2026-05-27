@@ -2,7 +2,7 @@ export function parseNpyFloat32(buffer: ArrayBuffer): { shape: number[]; values:
   const bytes = new Uint8Array(buffer);
   const magic = String.fromCharCode(...bytes.slice(0, 6));
   if (magic !== "\x93NUMPY") {
-    throw new Error("Dose artifact is not a NumPy .npy file.");
+    throw new Error("Դոզայի արտեֆակտը NumPy .npy ֆայլ չէ։");
   }
 
   const major = bytes[6];
@@ -13,15 +13,15 @@ export function parseNpyFloat32(buffer: ArrayBuffer): { shape: number[]; values:
   const header = new TextDecoder("latin1").decode(bytes.slice(headerOffset, dataOffset));
 
   if (!header.includes("'descr': '<f4'") && !header.includes('"descr": "<f4"')) {
-    throw new Error("Only little-endian float32 .npy dose arrays are supported.");
+    throw new Error("Աջակցվում են միայն little-endian float32 .npy դոզայի զանգվածները։");
   }
   if (header.includes("'fortran_order': True") || header.includes('"fortran_order": true')) {
-    throw new Error("Fortran-order .npy dose arrays are not supported.");
+    throw new Error("Ֆորտրան դասավորությամբ .npy դոզայի զանգվածները չեն աջակցվում։");
   }
 
   const shapeMatch = header.match(/['"]shape['"]:\s*\(([^)]*)\)/);
   if (!shapeMatch) {
-    throw new Error("Could not read .npy array shape.");
+    throw new Error("Չհաջողվեց կարդալ .npy զանգվածի չափերը։");
   }
   const shape = shapeMatch[1]
     .split(",")
@@ -54,7 +54,7 @@ export function doseUnit(quantity?: string, explicitUnit?: string): string {
   if (normalized.startsWith("DOSE")) {
     return "GeV/g";
   }
-  return "arb. units";
+  return "կամայական միավոր";
 }
 
 export function formatDoseWithUnit(value: number, unit: string): string {

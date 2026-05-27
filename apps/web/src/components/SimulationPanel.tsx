@@ -13,7 +13,7 @@ export function SimulationPanel({ sceneId }: SimulationPanelProps) {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [progressLabel, setProgressLabel] = useState("Submitting job");
+  const [progressLabel, setProgressLabel] = useState("Առաջադրանքն ուղարկվում է");
   const [error, setError] = useState<string | null>(null);
 
   async function runSimulation() {
@@ -23,16 +23,16 @@ export function SimulationPanel({ sceneId }: SimulationPanelProps) {
 
     setIsSubmitting(true);
     setProgress(10);
-    setProgressLabel("Submitting job");
+    setProgressLabel("Առաջադրանքն ուղարկվում է");
     setError(null);
 
     try {
       const simulation = await createSimulation(sceneId);
       setProgress(simulation.progressPercent ?? 0);
-      setProgressLabel(simulation.progressMessage ?? "Queued");
+      setProgressLabel(simulation.progressMessage ?? "Հերթում է");
       router.push(`/simulations/${simulation.id}`);
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Failed to create simulation.");
+      setError(caught instanceof Error ? caught.message : "Չհաջողվեց ստեղծել սիմուլյացիան։");
       setIsSubmitting(false);
       setProgress(0);
     }
@@ -41,12 +41,12 @@ export function SimulationPanel({ sceneId }: SimulationPanelProps) {
   return (
     <section className="panel">
       <div className="panel-header">
-        <strong>Simulation</strong>
+        <strong>Սիմուլյացիա</strong>
       </div>
       <div className="panel-body simulation-panel">
         <div>
-          <span className="muted">Scene</span>
-          <strong>{sceneId ?? "No scene loaded"}</strong>
+          <span className="muted">Տեսարան</span>
+          <strong>{sceneId ?? "Տեսարան բեռնված չէ"}</strong>
         </div>
         <button
           className="primary-button"
@@ -54,7 +54,7 @@ export function SimulationPanel({ sceneId }: SimulationPanelProps) {
           onClick={runSimulation}
           disabled={!sceneId || isSubmitting}
         >
-          {isSubmitting ? "Submitting..." : "Run Simulation"}
+          {isSubmitting ? "Ուղարկվում է..." : "Գործարկել սիմուլյացիան"}
         </button>
         {error ? <div className="error-text">{error}</div> : null}
       </div>

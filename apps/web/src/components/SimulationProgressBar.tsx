@@ -1,4 +1,5 @@
 import type { JobStatus } from "@/types/oopsenheimer";
+import { jobStatusLabels, localizeProgressLabel } from "@/lib/armenian";
 
 const statusProgress: Record<JobStatus, number> = {
   queued: 0,
@@ -8,16 +9,6 @@ const statusProgress: Record<JobStatus, number> = {
   parsing: 88,
   completed: 100,
   failed: 0,
-};
-
-const statusLabels: Record<JobStatus, string> = {
-  queued: "Queued",
-  compiling: "Compiling scene",
-  compiled: "Scene compiled",
-  running: "Running FLUKA",
-  parsing: "Parsing dose",
-  completed: "Completed",
-  failed: "Failed",
 };
 
 type SimulationProgressBarProps = {
@@ -33,7 +24,7 @@ export function SimulationProgressBar({
 }: SimulationProgressBarProps) {
   const percent = clampPercent(progressPercent ?? statusProgress[status]);
   const showEdge = percent > 0 && percent < 100 && status !== "failed";
-  const resolvedLabel = label || statusLabels[status];
+  const resolvedLabel = localizeProgressLabel(label, status) || jobStatusLabels[status];
 
   return (
     <div

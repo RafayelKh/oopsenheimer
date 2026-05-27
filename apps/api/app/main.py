@@ -1,4 +1,4 @@
-"""FastAPI application for Oops-enheimer."""
+"""FastAPI application for Oopsenheimer."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from app.schemas import ArtifactList, HealthResponse, SceneRecord, SimulationCre
 from app.services.queue import enqueue_simulation
 from app.services.store import InMemoryStore
 
-app = FastAPI(title="Oops-enheimer API", version="0.0.0")
+app = FastAPI(title="Օփսենհայմեր API", version="0.0.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://127.0.0.1:3000", "http://localhost:3000"],
@@ -32,45 +32,59 @@ def repo_root() -> Path:
 
 EXAMPLE_SCENES = {
     "lead_wall": {
-        "name": "Legacy Lead Wall",
+        "name": "Հին կապարե պատ",
         "filename": "lead_wall.scene.json",
-        "description": "Original compact 32 x 16 x 16 lead-wall compiler fixture.",
+        "description": "Սկզբնական փոքր 32 x 16 x 16 կապարե պատի կոմպիլյատորի օրինակ։",
     },
     "air_baseline": {
-        "name": "Air Beam Baseline",
+        "name": "Օդային ելակետ",
         "filename": "air_baseline.scene.json",
-        "description": "Empty 48 x 24 x 24 world for checking the unshielded beam.",
+        "description": "Դատարկ 48 x 24 x 24 աշխարհ՝ անպաշտպան ճառագայթը ստուգելու համար։",
     },
     "lead_slab": {
-        "name": "Lead Slab Shield",
+        "name": "Կապարե սալային պաշտպանիչ",
         "filename": "lead_slab.scene.json",
-        "description": "Dense full lead slab across the beam path.",
+        "description": "Խիտ ամբողջական կապարե սալ՝ ճառագայթի ճանապարհին։",
     },
     "lead_aperture": {
-        "name": "Lead Slab Aperture",
+        "name": "Բացվածքով կապարե սալ",
         "filename": "lead_aperture.scene.json",
-        "description": "Lead slab with a centered aperture around the beam.",
+        "description": "Կապարե սալ՝ ճառագայթի շուրջ կենտրոնական բացվածքով։",
     },
     "water_phantom": {
-        "name": "Water Phantom",
+        "name": "Ջրային ֆանտոմ",
         "filename": "water_phantom.scene.json",
-        "description": "Lead collimator followed by a water phantom target.",
+        "description": "Կապարե կոլիմատոր և հետո ջրային թիրախ։",
     },
     "house_occupant": {
-        "name": "House With Occupant",
+        "name": "Տուն բնակչով",
         "filename": "house_occupant.scene.json",
-        "description": "Voxel house with a door, glass windows, roof, and a tissue-like human figure inside.",
+        "description": "Վոքսելային տուն՝ դռնով, ապակե պատուհաններով, տանիքով և ներսում հյուսվածքանման մարդու պատկերով։",
     },
     "car": {
-        "name": "Car",
+        "name": "Ավտոմեքենա",
         "filename": "car.scene.json",
-        "description": "Compact vehicle with steel body, glass cabin, rubber wheels, and a driver.",
+        "description": "Փոքր մեքենա՝ պողպատե թափքով, ապակե սրահով, ռետինե անիվներով և վարորդով։",
     },
     "bus": {
-        "name": "Bus",
+        "name": "Ավտոբուս",
         "filename": "bus.scene.json",
-        "description": "Large passenger bus with windows, doors, wheels, seats, driver, and passengers.",
+        "description": "Մեծ ուղևորային ավտոբուս՝ պատուհաններով, դռներով, անիվներով, նստատեղերով, վարորդով և ուղևորներով։",
     },
+}
+
+MATERIAL_LABELS_HY = {
+    "air": "Օդ",
+    "lead": "Կապար",
+    "water": "Ջուր",
+    "concrete": "Բետոն",
+    "silicon": "Սիլիցիում",
+    "wood": "Փայտ",
+    "glass": "Ապակի",
+    "tissue": "Հյուսվածք",
+    "steel": "Պողպատ",
+    "rubber": "Ռետին",
+    "plastic": "Պլաստիկ",
 }
 
 
@@ -82,7 +96,14 @@ def example_scene_path(example_id: str = "lead_wall") -> Path:
 
 
 def load_example_scene(example_id: str = "lead_wall") -> dict[str, Any]:
-    return json.loads(example_scene_path(example_id).read_text())
+    scene = json.loads(example_scene_path(example_id).read_text())
+    for material_id, label in MATERIAL_LABELS_HY.items():
+        if material_id in scene.get("materials", {}):
+            scene["materials"][material_id]["label"] = label
+        palette = scene.get("world", {}).get("palette", {})
+        if material_id in palette:
+            palette[material_id]["label"] = label
+    return scene
 
 
 @app.get("/health", response_model=HealthResponse)
@@ -122,7 +143,7 @@ def examples() -> list[dict[str, str]]:
 @app.get("/examples/{example_id}")
 def get_example(example_id: str) -> dict[str, Any]:
     if example_id not in EXAMPLE_SCENES:
-        raise HTTPException(status_code=404, detail="Example not found.")
+        raise HTTPException(status_code=404, detail="Օրինակը չի գտնվել։")
     return load_example_scene(example_id)
 
 
@@ -131,7 +152,7 @@ def create_scene(payload: dict[str, Any]) -> SceneRecord:
     scene_json = payload.get("sceneJson") or payload
 
     if not isinstance(scene_json, dict) or scene_json.get("schema") != "oopsenheimer.scene.v1":
-        raise HTTPException(status_code=422, detail="Expected Oops-enheimer scene JSON.")
+        raise HTTPException(status_code=422, detail="Սպասվում է Օփսենհայմերի տեսարանի JSON։")
 
     return store.create_scene(scene_json)
 
@@ -140,14 +161,14 @@ def create_scene(payload: dict[str, Any]) -> SceneRecord:
 def get_scene(scene_id: str) -> SceneRecord:
     scene = store.get_scene(scene_id)
     if scene is None:
-        raise HTTPException(status_code=404, detail="Scene not found.")
+        raise HTTPException(status_code=404, detail="Տեսարանը չի գտնվել։")
     return scene
 
 
 @app.post("/simulations", response_model=SimulationRecord)
 def create_simulation(payload: SimulationCreate, background_tasks: BackgroundTasks) -> SimulationRecord:
     if store.get_scene(payload.scene_id) is None:
-        raise HTTPException(status_code=404, detail="Scene not found.")
+        raise HTTPException(status_code=404, detail="Տեսարանը չի գտնվել։")
     simulation = store.create_simulation(payload.scene_id)
     background_tasks.add_task(enqueue_simulation, simulation.id, store.storage_root)
     return simulation
@@ -157,7 +178,7 @@ def create_simulation(payload: SimulationCreate, background_tasks: BackgroundTas
 def get_simulation(simulation_id: str) -> SimulationRecord:
     simulation = store.get_simulation(simulation_id)
     if simulation is None:
-        raise HTTPException(status_code=404, detail="Simulation not found.")
+        raise HTTPException(status_code=404, detail="Սիմուլյացիան չի գտնվել։")
     return simulation
 
 
@@ -165,7 +186,7 @@ def get_simulation(simulation_id: str) -> SimulationRecord:
 def simulation_artifacts(simulation_id: str) -> ArtifactList:
     simulation = store.get_simulation(simulation_id)
     if simulation is None:
-        raise HTTPException(status_code=404, detail="Simulation not found.")
+        raise HTTPException(status_code=404, detail="Սիմուլյացիան չի գտնվել։")
 
     parsed_result = None
     if simulation.storage_path is not None:
@@ -184,13 +205,13 @@ def simulation_artifacts(simulation_id: str) -> ArtifactList:
 def download_artifact(simulation_id: str, artifact_path: str) -> FileResponse:
     simulation = store.get_simulation(simulation_id)
     if simulation is None or simulation.storage_path is None:
-        raise HTTPException(status_code=404, detail="Simulation not found.")
+        raise HTTPException(status_code=404, detail="Սիմուլյացիան չի գտնվել։")
 
     root = Path(simulation.storage_path).resolve()
     requested = (root / artifact_path).resolve()
     if requested == root or root not in requested.parents:
-        raise HTTPException(status_code=400, detail="Invalid artifact path.")
+        raise HTTPException(status_code=400, detail="Արտեֆակտի ուղին անվավեր է։")
     if not requested.exists() or not requested.is_file():
-        raise HTTPException(status_code=404, detail="Artifact not found.")
+        raise HTTPException(status_code=404, detail="Արտեֆակտը չի գտնվել։")
 
     return FileResponse(requested, filename=requested.name)

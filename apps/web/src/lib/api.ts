@@ -53,7 +53,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   });
 
   if (!response.ok) {
-    let message = `API request failed with status ${response.status}`;
+    let message = `API հարցումը ձախողվեց՝ կարգավիճակ ${response.status}`;
     try {
       const body = await response.json();
       message = typeof body.detail === "string" ? body.detail : message;

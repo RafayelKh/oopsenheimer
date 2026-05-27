@@ -28,15 +28,15 @@ type BeamSettings = {
 };
 
 const beamParticles = [
-  { value: "PHOTON", label: "Photons" },
-  { value: "NEUTRON", label: "Neutrons" },
-  { value: "PROTON", label: "Protons" },
-  { value: "ELECTRON", label: "Electrons" },
-  { value: "POSITRON", label: "Positrons" },
-  { value: "MUON+", label: "Muon +" },
-  { value: "MUON-", label: "Muon -" },
-  { value: "PION+", label: "Pion +" },
-  { value: "PION-", label: "Pion -" },
+  { value: "PHOTON", label: "Ֆոտոններ" },
+  { value: "NEUTRON", label: "Նեյտրոններ" },
+  { value: "PROTON", label: "Պրոտոններ" },
+  { value: "ELECTRON", label: "Էլեկտրոններ" },
+  { value: "POSITRON", label: "Պոզիտրոններ" },
+  { value: "MUON+", label: "Մյուոն +" },
+  { value: "MUON-", label: "Մյուոն -" },
+  { value: "PION+", label: "Պիոն +" },
+  { value: "PION-", label: "Պիոն -" },
 ] as const;
 type BeamParticle = (typeof beamParticles)[number]["value"];
 
@@ -71,7 +71,7 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
   const [savedSceneId, setSavedSceneId] = useState<string | null>(initialSceneId);
   const [isRunning, setIsRunning] = useState(false);
   const [runProgress, setRunProgress] = useState(0);
-  const [runProgressLabel, setRunProgressLabel] = useState("Preparing simulation");
+  const [runProgressLabel, setRunProgressLabel] = useState("Սիմուլյացիան պատրաստվում է");
   const [error, setError] = useState<string | null>(null);
   const [isEditLocked, setIsEditLocked] = useState(false);
   const [editorMode, setEditorMode] = useState<EditorMode>("orbit");
@@ -100,7 +100,7 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
       if ((event.metaKey || event.ctrlKey) && event.code === "KeyW") {
         event.preventDefault();
         event.stopImmediatePropagation();
-        setCloseGuardMessage("Close blocked");
+        setCloseGuardMessage("Փակումը արգելափակվեց");
       }
     }
 
@@ -170,24 +170,24 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
   async function runSimulation() {
     setIsRunning(true);
     setRunProgress(4);
-    setRunProgressLabel("Preparing simulation");
+    setRunProgressLabel("Սիմուլյացիան պատրաստվում է");
     setError(null);
     try {
       let sceneId = savedSceneId;
       if (!sceneId) {
         setRunProgress(8);
-        setRunProgressLabel("Saving scene");
+        setRunProgressLabel("Տեսարանը պահվում է");
         sceneId = (await createScene(sceneJson)).id;
       }
       setSavedSceneId(sceneId);
       setRunProgress(14);
-      setRunProgressLabel("Submitting job");
+      setRunProgressLabel("Առաջադրանքն ուղարկվում է");
       const simulation = await createSimulation(sceneId);
       setRunProgress(simulation.progressPercent ?? 0);
-      setRunProgressLabel(simulation.progressMessage ?? "Queued");
+      setRunProgressLabel(simulation.progressMessage ?? "Հերթում է");
       router.push(`/simulations/${simulation.id}`);
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Failed to run simulation.");
+      setError(caught instanceof Error ? caught.message : "Չհաջողվեց գործարկել սիմուլյացիան։");
       setIsRunning(false);
       setRunProgress(0);
     }
@@ -201,30 +201,27 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
         onClick={() => setIsControlDrawerOpen((isOpen) => !isOpen)}
         type="button"
       >
-        {isControlDrawerOpen ? "Close" : "Controls"}
+        {isControlDrawerOpen ? "Փակել" : "Կառավարում"}
       </button>
 
       <aside className={`editor-control-drawer ${isControlDrawerOpen ? "open" : ""}`}>
         <div className="drawer-header">
           <div>
-            <strong>Controls</strong>
-            <div className="muted">Materials, beam, scene</div>
+            <strong>Կառավարում</strong>
+            <div className="muted">Նյութեր, ճառագայթ, տեսարան</div>
           </div>
-          <button className="drawer-close-button" onClick={() => setIsControlDrawerOpen(false)} type="button">
-            Close
-          </button>
         </div>
         <div className="drawer-scroll">
           <section className="tutorial-panel">
             <div>
-              <strong>First run</strong>
-              <span className="muted">A quick path for new users</span>
+              <strong>Առաջին գործարկում</strong>
+              <span className="muted">Կարճ ուղեցույց սկսնակների համար</span>
             </div>
             <ol>
-              <li>Pick Blank or an example, then use materials to paint the object or shield.</li>
-              <li>Use Beam to choose the radiation particle, energy, start point, and direction.</li>
-              <li>Leave empty space as air, and place dense materials where protection should be tested.</li>
-              <li>Run the simulation, then read the dose view: lower values behind the shield mean better attenuation.</li>
+              <li>Ընտրեք դատարկ տեսարան կամ օրինակ, հետո նյութերով նկարեք օբյեկտը կամ պաշտպանիչ շերտը։</li>
+              <li>Ճառագայթ բաժնում ընտրեք մասնիկը, էներգիան, մեկնարկային կետը և ուղղությունը։</li>
+              <li>Դատարկ տարածքը թողեք որպես օդ, իսկ խիտ նյութերը տեղադրեք այնտեղ, որտեղ պետք է ստուգել պաշտպանությունը։</li>
+              <li>Գործարկեք սիմուլյացիան և նայեք դոզայի տեսքին․ պաշտպանիչի հետևում փոքր արժեքները նշանակում են ավելի լավ կլանում։</li>
             </ol>
           </section>
           <MaterialPalette selectedId={selectedMaterial} onSelect={(id) => setSelectedMaterial(id as MaterialId)} />
@@ -237,12 +234,12 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
           />
           <section className="panel">
             <div className="panel-header">
-              <strong>Slice paint</strong>
+              <strong>Շերտի ներկում</strong>
               <span className="muted">{materialLookup[selectedMaterial].label}</span>
             </div>
             <div className="panel-body editor-controls">
               <label className="slice-control editor-slider">
-                <span>Z slice {sliceIndex}</span>
+                <span>Z շերտ {sliceIndex}</span>
                 <input
                   max={dims[2] - 1}
                   min={0}
@@ -258,7 +255,7 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
                   const materialId = grid[voxelIndex(x, y, sliceIndex)];
                   return (
                     <button
-                      aria-label={`Paint ${x},${y},${sliceIndex}`}
+                      aria-label={`Ներկել ${x},${y},${sliceIndex}`}
                       className="voxel-cell"
                       key={`${x}-${y}`}
                       onClick={(event) => editSliceVoxel(x, y, event.shiftKey ? "erase" : "paint")}
@@ -268,7 +265,7 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
                         }
                       }}
                       style={{ backgroundColor: materialLookup[materialId].color }}
-                      title={`${x}, ${y}, ${sliceIndex}: ${materialId}`}
+                      title={`${x}, ${y}, ${sliceIndex}: ${materialLookup[materialId].label}`}
                       type="button"
                     />
                   );
@@ -279,8 +276,8 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
 
           <section className="panel">
             <div className="panel-header">
-              <strong>Scene</strong>
-              <span className="muted">{savedSceneId ? "saved" : "unsaved"}</span>
+              <strong>Տեսարան</strong>
+              <span className="muted">{savedSceneId ? "պահված" : "չպահված"}</span>
             </div>
             <div className="panel-body editor-actions">
               <div className="material-counts">
@@ -291,7 +288,7 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
                   </span>
                 ))}
               </div>
-              {savedSceneId ? <div className="muted scene-id">Scene {savedSceneId}</div> : null}
+              {savedSceneId ? <div className="muted scene-id">Տեսարան {savedSceneId}</div> : null}
             </div>
           </section>
         </div>
@@ -300,16 +297,16 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
       <div className="editor-canvas-panel">
         <div className="editor-run-panel">
           <button className="primary-button run-button" disabled={isRunning} onClick={runSimulation} type="button">
-            {isRunning ? "Starting..." : "Run Simulation"}
+            {isRunning ? "Սկսվում է..." : "Գործարկել սիմուլյացիան"}
           </button>
           {error ? <div className="error-text run-error">{error}</div> : null}
         </div>
         <div className="editor-floating-header">
           <div>
-            <strong>Voxel editor</strong>
-            <div className="muted">48 x 24 x 24 voxel scene</div>
+            <strong>Վոքսելային խմբագիր</strong>
+            <div className="muted">48 x 24 x 24 վոքսելային տեսարան</div>
           </div>
-          <div className="editor-mode-toggle" aria-label="Editor mode" role="group">
+          <div className="editor-mode-toggle" aria-label="Խմբագրի ռեժիմ" role="group">
             {(["orbit", "walk"] as const).map((mode) => (
               <button
                 className={editorMode === mode ? "selected" : ""}
@@ -317,15 +314,15 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
                 onClick={() => setEditorMode(mode)}
                 type="button"
               >
-                {mode === "orbit" ? "Orbit" : "Walk"}
+                {mode === "orbit" ? "Պտտում" : "Քայլք"}
               </button>
             ))}
           </div>
           <span className="muted">
-            {editorMode === "walk" ? (isWalkPointerLocked ? "creative" : "creative ready") : isEditLocked ? "edit locked" : `Z ${sliceIndex}`}
+            {editorMode === "walk" ? (isWalkPointerLocked ? "քայլքի ռեժիմ" : "քայլքը պատրաստ է") : isEditLocked ? "խմբագրումը կողպված է" : `Z ${sliceIndex}`}
           </span>
         </div>
-        <div className={`voxel-stage ${editorMode === "walk" ? "walk-mode" : ""}`} aria-label="Voxel editor 3D preview">
+        <div className={`voxel-stage ${editorMode === "walk" ? "walk-mode" : ""}`} aria-label="Վոքսելային խմբագրի 3D նախադիտում">
           <Canvas camera={{ position: [34, 24, 34], fov: 70 }} shadows>
             <color attach="background" args={["#141813"]} />
             <Environment preset="warehouse" />
@@ -388,6 +385,8 @@ function BeamSettingsPanel({
   beamSettings: BeamSettings;
   onChange: (settings: BeamSettings) => void;
 }) {
+  const particleLabel = beamParticles.find((particle) => particle.value === beamSettings.particle)?.label ?? beamSettings.particle;
+
   function updateEnergy(value: number) {
     onChange({ ...beamSettings, energyGeV: Math.max(0.000001, value) });
   }
@@ -411,12 +410,12 @@ function BeamSettingsPanel({
   return (
     <section className="panel">
       <div className="panel-header">
-        <strong>Beam</strong>
-        <span className="muted">{beamSettings.particle} ray</span>
+        <strong>Ճառագայթ</strong>
+        <span className="muted">{particleLabel} ճառագայթ</span>
       </div>
       <div className="panel-body beam-controls">
         <label className="numeric-control">
-          <span>Particle</span>
+          <span>Մասնիկ</span>
           <select onChange={(event) => updateParticle(event.target.value)} value={beamSettings.particle}>
             {beamParticles.map((particle) => (
               <option key={particle.value} value={particle.value}>
@@ -426,7 +425,7 @@ function BeamSettingsPanel({
           </select>
         </label>
         <label className="numeric-control">
-          <span>Energy GeV</span>
+          <span>Էներգիա GeV</span>
           <input
             min={0.000001}
             onChange={(event) => updateEnergy(Number(event.target.value))}
@@ -454,7 +453,7 @@ function BeamSettingsPanel({
           })}
         </div>
         <div className="beam-position-grid beam-vector-grid">
-          {(["Dir X", "Dir Y", "Dir Z"] as const).map((axis, index) => {
+          {(["Ուղղ. X", "Ուղղ. Y", "Ուղղ. Z"] as const).map((axis, index) => {
             const axisIndex = index as 0 | 1 | 2;
             return (
               <label className="numeric-control" key={axis}>
@@ -1450,7 +1449,7 @@ function buildSceneJson(grid: MaterialId[], beamSettings: BeamSettings): Record<
       backend: "fluka_voxel",
       flukaInput: {
         filename: "scene.inp",
-        title: "Oops-enheimer generated editor scene",
+        title: "Օփսենհայմերի խմբագրով ստեղծված տեսարան",
         includeComments: true,
       },
       voxelFile: {

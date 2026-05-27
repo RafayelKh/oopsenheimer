@@ -11,8 +11,8 @@ export function ArtifactList({ simulationId, artifacts = pendingArtifacts }: Art
   return (
     <section className="panel">
       <div className="panel-header">
-        <strong>Artifacts</strong>
-        <span className="muted">{simulationId ?? "pending"}</span>
+        <strong>Արտեֆակտներ</strong>
+        <span className="muted">{simulationId ?? "սպասում է"}</span>
       </div>
       <div className="panel-body artifact-list">
         {artifacts.map((artifact) => (

@@ -53,19 +53,19 @@ export function DoseVolumeViewer({ parsedResult, simulationId }: DoseVolumeViewe
           artifactDownloadUrl(simulationId, `parsed/${parsedResult.valuesFile}`),
         );
         if (!response.ok) {
-          throw new Error(`Dose artifact request failed with ${response.status}`);
+          throw new Error(`Դոզայի արտեֆակտի հարցումը ձախողվեց՝ կարգավիճակ ${response.status}`);
         }
         const parsed = parseNpyFloat32(await response.arrayBuffer());
         const expectedCount = parsedResult.dims[0] * parsedResult.dims[1] * parsedResult.dims[2];
         if (parsed.values.length !== expectedCount) {
-          throw new Error(`Dose array has ${parsed.values.length} values, expected ${expectedCount}`);
+          throw new Error(`Դոզայի զանգվածում կա ${parsed.values.length} արժեք, սպասվում էր ${expectedCount}`);
         }
         if (active) {
           setDoseValues(parsed.values);
         }
       } catch (caught) {
         if (active) {
-          setLoadError(caught instanceof Error ? caught.message : "Failed to load dose volume.");
+          setLoadError(caught instanceof Error ? caught.message : "Չհաջողվեց բեռնել դոզայի ծավալը։");
         }
       }
     }
@@ -82,7 +82,7 @@ export function DoseVolumeViewer({ parsedResult, simulationId }: DoseVolumeViewe
   );
   const dims = parsedResult?.dims ?? [48, 24, 24];
   const unit = doseUnit(parsedResult?.quantity, parsedResult?.unit);
-  const maxLabel = parsedResult ? formatDoseWithUnit(parsedResult.max, unit) : "pending";
+  const maxLabel = parsedResult ? formatDoseWithUnit(parsedResult.max, unit) : "սպասում է";
 
   useEffect(() => {
     setHoveredDose(null);
@@ -107,15 +107,15 @@ export function DoseVolumeViewer({ parsedResult, simulationId }: DoseVolumeViewe
     <section className="panel dose-volume-viewer">
       <div className="panel-header">
         <div>
-          <strong>3D dose volume</strong>
-          <div className="muted">translucent full-volume scoring with beam path</div>
+          <strong>Դոզայի 3D ծավալ</strong>
+          <div className="muted">կիսաթափանցիկ ամբողջական ծավալային գնահատում՝ ճառագայթի ուղով</div>
         </div>
-        <span className="muted">{volume.length} voxels</span>
+        <span className="muted">{volume.length} վոքսել</span>
       </div>
       <div className="panel-body dose-volume-body">
         <div className="volume-toolbar">
           <label className="slice-control volume-threshold">
-            <span>Cutoff {(threshold * 100).toFixed(0)}%</span>
+            <span>Շեմ {(threshold * 100).toFixed(0)}%</span>
             <input
               max={0.9}
               min={0}
@@ -125,12 +125,12 @@ export function DoseVolumeViewer({ parsedResult, simulationId }: DoseVolumeViewe
               value={threshold}
             />
           </label>
-          <span className="muted">max {maxLabel}</span>
+          <span className="muted">առավելագույն {maxLabel}</span>
         </div>
         {loadError ? <div className="error-text">{loadError}</div> : null}
         <div
           className={`volume-stage ${hoveredDose ? "is-hovering" : ""}`}
-          aria-label="3D dose volume"
+          aria-label="Դոզայի 3D ծավալ"
           onPointerLeave={() => setHoveredDose(null)}
           ref={stageRef}
         >
@@ -299,21 +299,21 @@ function DoseHoverTooltip({ hover, unit }: { hover: HoveredDoseVoxel | null; uni
       className={`dose-hover-tooltip ${hover.placement}`}
       style={{ left: hover.x, top: hover.y }}
     >
-      <div className="tooltip-label">Voxel dose</div>
+      <div className="tooltip-label">Վոքսելի դոզա</div>
       <strong>{formatDoseWithUnit(hover.voxel.value, unit)}</strong>
       <dl>
         <div>
-          <dt>relative</dt>
+          <dt>հարաբերական</dt>
           <dd>{(hover.voxel.norm * 100).toFixed(1)}%</dd>
         </div>
         <div>
-          <dt>grid</dt>
+          <dt>ցանց</dt>
           <dd>
             {gridX}, {gridY}, {gridZ}
           </dd>
         </div>
         <div>
-          <dt>center</dt>
+          <dt>կենտրոն</dt>
           <dd>
             {cmX.toFixed(1)}, {cmY.toFixed(1)}, {cmZ.toFixed(1)} cm
           </dd>

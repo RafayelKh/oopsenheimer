@@ -45,7 +45,7 @@ export function SimulationStatusView({ simulationId }: SimulationStatusViewProps
         }
       } catch (caught) {
         if (active) {
-          setError(caught instanceof Error ? caught.message : "Failed to poll simulation.");
+          setError(caught instanceof Error ? caught.message : "Չհաջողվեց թարմացնել սիմուլյացիայի վիճակը։");
         }
         if (timer) {
           clearInterval(timer);
@@ -74,8 +74,8 @@ export function SimulationStatusView({ simulationId }: SimulationStatusViewProps
       <section className="panel">
         <div className="panel-header">
           <div>
-            <strong>Simulation {simulationId}</strong>
-            <div className="muted">Polling every 2 seconds</div>
+            <strong>Սիմուլյացիա {simulationId}</strong>
+            <div className="muted">Թարմացվում է յուրաքանչյուր 2 վայրկյանը մեկ</div>
           </div>
           <JobStatusBadge status={status} />
         </div>

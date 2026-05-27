@@ -28,7 +28,7 @@ export function LoadDemoPanel() {
       })
       .catch((caught) => {
         if (active) {
-          setError(caught instanceof Error ? caught.message : "Failed to load examples.");
+          setError(caught instanceof Error ? caught.message : "Չհաջողվեց բեռնել օրինակները։");
         }
       });
 
@@ -53,7 +53,7 @@ export function LoadDemoPanel() {
   }, [isOpen]);
 
   function openBlankScene() {
-    setLoadedSceneName("Blank scene");
+    setLoadedSceneName("Դատարկ տեսարան");
     setError(null);
     setIsOpen(false);
   }
@@ -69,7 +69,7 @@ export function LoadDemoPanel() {
       const scene = await createScene(example);
       router.push(`/scenes/${scene.id}`);
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Failed to load demo scene.");
+      setError(caught instanceof Error ? caught.message : "Չհաջողվեց բեռնել օրինակային տեսարանը։");
     } finally {
       setLoadingExampleId(null);
     }
@@ -78,7 +78,7 @@ export function LoadDemoPanel() {
   return (
     <>
       <button className="examples-modal-launch" onClick={() => setIsOpen(true)} type="button">
-        Examples
+        Օրինակներ
       </button>
       {isOpen ? (
         <div className="examples-modal-backdrop" onMouseDown={() => setIsOpen(false)}>
@@ -91,44 +91,46 @@ export function LoadDemoPanel() {
           >
             <div className="examples-modal-header">
               <div>
-                <strong id="examples-modal-title">Start a scene</strong>
-                <div className="muted">Choose a blank workspace or load a prepared setup.</div>
+                <strong id="examples-modal-title">Սկսել տեսարան</strong>
+                <div className="muted">Ընտրեք դատարկ աշխատանքային տարածք կամ պատրաստի օրինակ։</div>
               </div>
               <button className="drawer-close-button" onClick={() => setIsOpen(false)} type="button">
-                Close
+                Փակել
               </button>
             </div>
-            <div className="example-choice-grid">
-              <button
-                className="example-choice"
-                disabled={loadingExampleId !== null}
-                onClick={openBlankScene}
-                type="button"
-              >
-                <span className="example-icon-box">
-                  <ExampleIcon name="blank" />
-                </span>
-                <strong>Blank</strong>
-                <span>Start with empty air and build your own shield.</span>
-              </button>
-              {visibleExamples.map((example) => (
+            <div className="example-choice-list">
+              <div className="example-choice-grid">
                 <button
                   className="example-choice"
                   disabled={loadingExampleId !== null}
-                  key={example.id}
-                  onClick={() => loadDemo(example.id)}
+                  onClick={openBlankScene}
                   type="button"
                 >
                   <span className="example-icon-box">
-                    <ExampleIcon name={iconForExample(example.id)} />
+                    <ExampleIcon name="blank" />
                   </span>
-                  <strong>{example.name}</strong>
-                  <span>{loadingExampleId === example.id ? "Loading..." : example.description ?? example.filename}</span>
+                  <strong>Դատարկ</strong>
+                  <span>Սկսեք դատարկ օդից և կառուցեք ձեր պաշտպանիչը։</span>
                 </button>
-              ))}
+                {visibleExamples.map((example) => (
+                  <button
+                    className="example-choice"
+                    disabled={loadingExampleId !== null}
+                    key={example.id}
+                    onClick={() => loadDemo(example.id)}
+                    type="button"
+                  >
+                    <span className="example-icon-box">
+                      <ExampleIcon name={iconForExample(example.id)} />
+                    </span>
+                    <strong>{example.name}</strong>
+                    <span>{loadingExampleId === example.id ? "Բեռնվում է..." : example.description ?? example.filename}</span>
+                  </button>
+                ))}
+              </div>
             </div>
             {error ? <div className="error-text examples-modal-error">{error}</div> : null}
-            {loadedSceneName ? <div className="muted scene-id">Selected {loadedSceneName}</div> : null}
+            {loadedSceneName ? <div className="muted scene-id">Ընտրված է՝ {loadedSceneName}</div> : null}
           </section>
         </div>
       ) : null}
