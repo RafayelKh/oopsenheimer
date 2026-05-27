@@ -1,0 +1,38 @@
+FROM python:3.13-slim-bookworm
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    FLUKA_BIN=/usr/local/fluka/bin \
+    PATH=/usr/local/fluka/bin:$PATH
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        bash \
+        ca-certificates \
+        gfortran \
+        libgfortran5 \
+        libquadmath0 \
+        perl \
+        procps \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY deploy/fluka/fluka.deb /tmp/fluka.deb
+RUN dpkg -i /tmp/fluka.deb \
+    && rm /tmp/fluka.deb \
+    && test -x /usr/local/fluka/bin/rfluka \
+    && test -x /usr/local/fluka/bin/usbsuw \
+    && test -x /usr/local/fluka/bin/usbrea
+
+COPY packages/compiler packages/compiler
+COPY workers/fluka_runner workers/fluka_runner
+
+RUN pip install --no-cache-dir \
+    -e packages/compiler \
+    -e workers/fluka_runner
+
+WORKDIR /app/workers/fluka_runner
+
+CMD ["celery", "-A", "worker.celery_app", "worker", "--loglevel=info", "--concurrency=1"]

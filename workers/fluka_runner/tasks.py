@@ -11,6 +11,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from celery import chain
+
 from worker import celery_app, settings
 
 STATUS_PROGRESS = {
@@ -326,3 +328,11 @@ def enqueue_mock_pipeline(simulation_id: str) -> None:
     if run_result.get("status") == "failed":
         return
     _parse_results(simulation_id)
+
+
+def enqueue_pipeline(simulation_id: str) -> None:
+    chain(
+        compile_scene_task.si(simulation_id),
+        run_fluka_task.si(simulation_id),
+        parse_results_task.si(simulation_id),
+    ).apply_async()

@@ -22,4 +22,4 @@ def enqueue_simulation(simulation_id: str, storage_root: Path) -> None:
 
     tasks.settings.storage_root = storage_root
     tasks.settings.sim_mode = settings.sim_mode
-    tasks.enqueue_mock_pipeline(simulation_id)
+    tasks.enqueue_pipeline(simulation_id)

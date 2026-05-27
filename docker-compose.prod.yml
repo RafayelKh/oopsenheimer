@@ -1,0 +1,72 @@
+name: oopsenheimer
+
+services:
+  redis:
+    image: redis:7-bookworm
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: deploy/docker/Dockerfile.api
+    restart: unless-stopped
+    environment:
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      FLUKA_BIN: /usr/local/fluka/bin
+      OOPSENHEIMER_CELERY_TASK_ALWAYS_EAGER: "false"
+      OOPSENHEIMER_SIM_MODE: fluka
+      STORAGE_ROOT: /data/oopsenheimer
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - storage_data:/data/oopsenheimer
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  worker:
+    build:
+      context: .
+      dockerfile: deploy/docker/Dockerfile.worker
+    restart: unless-stopped
+    environment:
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      FLUKA_BIN: /usr/local/fluka/bin
+      OOPSENHEIMER_CELERY_TASK_ALWAYS_EAGER: "false"
+      OOPSENHEIMER_SIM_MODE: fluka
+      STORAGE_ROOT: /data/oopsenheimer
+    volumes:
+      - storage_data:/data/oopsenheimer
+      - /opt/oopsenheimer/fluka-data/neutron:/usr/local/fluka/data/neutron:ro
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: deploy/docker/Dockerfile.web
+      args:
+        NEXT_PUBLIC_API_BASE_URL: /api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  redis_data:
+  storage_data:

@@ -1,0 +1,30 @@
+FROM node:24-bookworm-slim AS deps
+
+WORKDIR /app/apps/web
+COPY apps/web/package*.json ./
+RUN npm ci
+
+FROM node:24-bookworm-slim AS builder
+
+WORKDIR /app/apps/web
+COPY --from=deps /app/apps/web/node_modules ./node_modules
+COPY apps/web ./
+ARG NEXT_PUBLIC_API_BASE_URL=/api
+ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN npm run build
+
+FROM node:24-bookworm-slim AS runner
+
+ENV NODE_ENV=production \
+    NEXT_TELEMETRY_DISABLED=1
+
+WORKDIR /app/apps/web
+COPY apps/web/package*.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+COPY --from=builder /app/apps/web/.next ./.next
+COPY --from=builder /app/apps/web/public ./public
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start", "--", "--hostname", "0.0.0.0", "--port", "3000"]

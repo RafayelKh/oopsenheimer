@@ -29,6 +29,10 @@ apps/api/storage/
 workers/fluka_runner/*.egg-info/
 job_*/
 
+# Deployment-only binary packages
+deploy/fluka/*.deb
+!deploy/fluka/.gitkeep
+
 # OS/editor
 .DS_Store
 .idea/

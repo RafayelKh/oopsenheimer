@@ -69,7 +69,6 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
   const [beamSettings, setBeamSettings] = useState<BeamSettings>(() => beamFromSceneJson(initialSceneJson));
   const [sliceIndex, setSliceIndex] = useState(() => firstNonAirSlice(gridFromSceneJson(initialSceneJson)));
   const [savedSceneId, setSavedSceneId] = useState<string | null>(initialSceneId);
-  const [isSaving, setIsSaving] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [runProgress, setRunProgress] = useState(0);
   const [runProgressLabel, setRunProgressLabel] = useState("Preparing simulation");
@@ -77,7 +76,6 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
   const [isEditLocked, setIsEditLocked] = useState(false);
   const [editorMode, setEditorMode] = useState<EditorMode>("orbit");
   const [isWalkPointerLocked, setIsWalkPointerLocked] = useState(false);
-  const [airFillMessage, setAirFillMessage] = useState<string | null>(null);
   const [isControlDrawerOpen, setIsControlDrawerOpen] = useState(true);
   const [closeGuardMessage, setCloseGuardMessage] = useState<string | null>(null);
 
@@ -95,17 +93,7 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
     setBeamSettings(beamFromSceneJson(initialSceneJson));
     setSliceIndex(firstNonAirSlice(nextGrid));
     setSavedSceneId(initialSceneId);
-    setAirFillMessage(null);
   }, [initialSceneId, initialSceneJson]);
-
-  useEffect(() => {
-    if (!airFillMessage) {
-      return;
-    }
-
-    const timeoutId = window.setTimeout(() => setAirFillMessage(null), 1600);
-    return () => window.clearTimeout(timeoutId);
-  }, [airFillMessage]);
 
   useEffect(() => {
     function guardCloseShortcut(event: KeyboardEvent) {
@@ -179,32 +167,6 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
     applyVoxel(x, y, sliceIndex, mode);
   }
 
-  function addRestWithAir() {
-    const normalizedGrid = normalizeGridWithAir(grid);
-    const changed =
-      normalizedGrid.length !== grid.length ||
-      normalizedGrid.some((materialId, index) => materialId !== grid[index]);
-
-    if (changed) {
-      setGrid(normalizedGrid);
-      setSavedSceneId(null);
-    }
-    setAirFillMessage("filled");
-  }
-
-  async function saveScene() {
-    setIsSaving(true);
-    setError(null);
-    try {
-      const scene = await createScene(sceneJson);
-      setSavedSceneId(scene.id);
-    } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Failed to save scene.");
-    } finally {
-      setIsSaving(false);
-    }
-  }
-
   async function runSimulation() {
     setIsRunning(true);
     setRunProgress(4);
@@ -253,6 +215,18 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
           </button>
         </div>
         <div className="drawer-scroll">
+          <section className="tutorial-panel">
+            <div>
+              <strong>First run</strong>
+              <span className="muted">A quick path for new users</span>
+            </div>
+            <ol>
+              <li>Pick Blank or an example, then use materials to paint the object or shield.</li>
+              <li>Use Beam to choose the radiation particle, energy, start point, and direction.</li>
+              <li>Leave empty space as air, and place dense materials where protection should be tested.</li>
+              <li>Run the simulation, then read the dose view: lower values behind the shield mean better attenuation.</li>
+            </ol>
+          </section>
           <MaterialPalette selectedId={selectedMaterial} onSelect={(id) => setSelectedMaterial(id as MaterialId)} />
           <BeamSettingsPanel
             beamSettings={beamSettings}
@@ -317,26 +291,19 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
                   </span>
                 ))}
               </div>
-              <button className="primary-button" disabled={isSaving} onClick={saveScene} type="button">
-                {isSaving ? "Saving..." : "Save Scene"}
-              </button>
-              <div className="air-fill-row">
-                <button className="primary-button secondary-button" onClick={addRestWithAir} type="button">
-                  Add the rest with AIR
-                </button>
-                {airFillMessage ? <span className="fill-message">{airFillMessage}</span> : null}
-              </div>
-              <button className="primary-button secondary-button" disabled={isRunning} onClick={runSimulation} type="button">
-                {isRunning ? "Starting..." : "Run Simulation"}
-              </button>
               {savedSceneId ? <div className="muted scene-id">Scene {savedSceneId}</div> : null}
-              {error ? <div className="error-text">{error}</div> : null}
             </div>
           </section>
         </div>
       </aside>
 
       <div className="editor-canvas-panel">
+        <div className="editor-run-panel">
+          <button className="primary-button run-button" disabled={isRunning} onClick={runSimulation} type="button">
+            {isRunning ? "Starting..." : "Run Simulation"}
+          </button>
+          {error ? <div className="error-text run-error">{error}</div> : null}
+        </div>
         <div className="editor-floating-header">
           <div>
             <strong>Voxel editor</strong>
@@ -1288,14 +1255,6 @@ function BeamPath({ beamSettings }: { beamSettings: BeamSettings }) {
 
 function createEmptyGrid(): MaterialId[] {
   return Array.from({ length: dims[0] * dims[1] * dims[2] }, () => "air");
-}
-
-function normalizeGridWithAir(grid: MaterialId[]): MaterialId[] {
-  const expectedCount = dims[0] * dims[1] * dims[2];
-  return Array.from({ length: expectedCount }, (_, index) => {
-    const materialId = grid[index] as unknown;
-    return isMaterialId(materialId) ? materialId : "air";
-  });
 }
 
 function gridFromSceneJson(sceneJson?: Record<string, unknown> | null): MaterialId[] {
