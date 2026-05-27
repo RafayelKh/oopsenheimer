@@ -7,14 +7,14 @@ FLUKA is not bundled, redistributed, copied, or installed by Oops-enheimer. User
 Real mode requires:
 
 ```bash
-export RADCRAFT_SIM_MODE=fluka
+export OOPSENHEIMER_SIM_MODE=fluka
 export FLUKA_BIN=/path/to/fluka/bin
 ```
 
 Mock mode does not require FLUKA:
 
 ```bash
-export RADCRAFT_SIM_MODE=mock
+export OOPSENHEIMER_SIM_MODE=mock
 ```
 
 ## rfluka Pattern

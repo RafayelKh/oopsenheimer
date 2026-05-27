@@ -1,9 +1,9 @@
 import numpy as np
 import pytest
 
-from radcraft_compiler.compiler import expand_chunks, resolve_materials
-from radcraft_compiler.organ_map import build_organ_map, fluka_region_name
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.compiler import expand_chunks, resolve_materials
+from oopsenheimer_compiler.organ_map import build_organ_map, fluka_region_name
+from oopsenheimer_compiler.schema import SceneDefinition
 from tests.test_chunk_expansion import make_scene
 
 

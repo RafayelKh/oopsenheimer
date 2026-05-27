@@ -2,7 +2,7 @@
 
 The compiler accepts scene JSON with:
 
-- `schema`: must be `radcraft.scene.v1`.
+- `schema`: must be `oopsenheimer.scene.v1`.
 - `units`: length `cm`, energy `GeV`, density `g/cm3`.
 - `world.grid`: dimensions `[nx, ny, nz]`, voxel size in centimeters, origin, and `axisOrder: "x-fastest"`.
 - `world.palette`: block definitions mapping block IDs to material IDs.
@@ -25,7 +25,7 @@ RLE expansion is x-fastest: x advances first, then y, then z.
 
 ## Manifest Schema
 
-`scene.map.json` uses `radcraft.manifest.v1` and includes:
+`scene.map.json` uses `oopsenheimer.manifest.v1` and includes:
 
 - input and voxel filenames.
 - voxel index to centimeter coordinate transform.

@@ -1,4 +1,4 @@
-from radcraft_compiler import __version__
+from oopsenheimer_compiler import __version__
 
 
 def test_compiler_package_imports() -> None:

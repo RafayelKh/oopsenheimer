@@ -3,11 +3,11 @@ from pathlib import Path
 import numpy as np
 from typer.testing import CliRunner
 
-from radcraft_compiler.cli import app
-from radcraft_compiler.compiler import expand_chunks, resolve_materials
-from radcraft_compiler.emit_inp import emit_inp, material_cuboids_from_grid, render_inp
-from radcraft_compiler.organ_map import build_organ_map
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.cli import app
+from oopsenheimer_compiler.compiler import expand_chunks, resolve_materials
+from oopsenheimer_compiler.emit_inp import emit_inp, material_cuboids_from_grid, render_inp
+from oopsenheimer_compiler.organ_map import build_organ_map
+from oopsenheimer_compiler.schema import SceneDefinition
 
 
 def load_example() -> SceneDefinition:

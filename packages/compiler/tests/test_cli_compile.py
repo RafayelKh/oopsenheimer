@@ -3,7 +3,7 @@ from pathlib import Path
 
 from typer.testing import CliRunner
 
-from radcraft_compiler.cli import app
+from oopsenheimer_compiler.cli import app
 
 
 def example_scene_path() -> Path:
@@ -35,7 +35,7 @@ def test_cli_compile_writes_meta_json(tmp_path: Path) -> None:
 
     assert result.exit_code == 0, result.output
     meta = json.loads((tmp_path / "scene.meta.json").read_text())
-    assert meta["schema"] == "radcraft.meta.v1"
+    assert meta["schema"] == "oopsenheimer.meta.v1"
     assert meta["voxelCount"] == 8192
     assert meta["organCount"] == 2
 

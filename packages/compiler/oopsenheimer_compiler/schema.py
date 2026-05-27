@@ -195,7 +195,7 @@ class EmitSettings(StrictModel):
 
 
 class SceneDefinition(StrictModel):
-    schema_: Literal["radcraft.scene.v1"] = Field(alias="schema")
+    schema_: Literal["oopsenheimer.scene.v1"] = Field(alias="schema")
     units: Units
     world: World
     materials: dict[str, MaterialDefinition]

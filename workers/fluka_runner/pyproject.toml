@@ -1,5 +1,5 @@
 [project]
-name = "radcraft-fluka-runner"
+name = "oopsenheimer-fluka-runner"
 version = "0.0.0"
 description = "Oops-enheimer FLUKA worker."
 requires-python = ">=3.11"

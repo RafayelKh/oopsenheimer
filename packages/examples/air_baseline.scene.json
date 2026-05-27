@@ -1,5 +1,5 @@
 {
-  "schema": "radcraft.scene.v1",
+  "schema": "oopsenheimer.scene.v1",
   "units": {
     "length": "cm",
     "energy": "GeV",

@@ -3,9 +3,9 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from radcraft_compiler.emit_vxl import emit_vxl, organ_ids_x_fastest, render_vxl_placeholder
-from radcraft_compiler.organ_map import build_organ_map
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.emit_vxl import emit_vxl, organ_ids_x_fastest, render_vxl_placeholder
+from oopsenheimer_compiler.organ_map import build_organ_map
+from oopsenheimer_compiler.schema import SceneDefinition
 from tests.test_emit_inp import load_example
 
 
@@ -55,7 +55,7 @@ def test_render_vxl_rejects_wrong_grid_shape() -> None:
 def test_cli_compile_creates_scene_vxl(tmp_path: Path) -> None:
     from typer.testing import CliRunner
 
-    from radcraft_compiler.cli import app
+    from oopsenheimer_compiler.cli import app
 
     scene_path = Path(__file__).parents[2] / "examples" / "lead_wall.scene.json"
     result = CliRunner().invoke(app, ["compile", str(scene_path), "--out", str(tmp_path)])

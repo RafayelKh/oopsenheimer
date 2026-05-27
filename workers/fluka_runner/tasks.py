@@ -116,12 +116,12 @@ def _compile_scene(simulation_id: str) -> dict:
             raise FileNotFoundError(f"scene JSON not found: {scene_path}")
 
         ensure_compiler_path()
-        from radcraft_compiler.compiler import expand_chunks, resolve_materials
-        from radcraft_compiler.emit_inp import emit_inp
-        from radcraft_compiler.emit_vxl import emit_vxl
-        from radcraft_compiler.manifest import emit_manifest, emit_meta
-        from radcraft_compiler.organ_map import build_organ_map
-        from radcraft_compiler.schema import SceneDefinition
+        from oopsenheimer_compiler.compiler import expand_chunks, resolve_materials
+        from oopsenheimer_compiler.emit_inp import emit_inp
+        from oopsenheimer_compiler.emit_vxl import emit_vxl
+        from oopsenheimer_compiler.manifest import emit_manifest, emit_meta
+        from oopsenheimer_compiler.organ_map import build_organ_map
+        from oopsenheimer_compiler.schema import SceneDefinition
 
         scene = SceneDefinition.model_validate_json(scene_path.read_text())
         block_grid = expand_chunks(scene)
@@ -161,7 +161,7 @@ def _run_fluka(simulation_id: str) -> dict:
         return update_job_status(
             simulation_id,
             "failed",
-            f"Unsupported RADCRAFT_SIM_MODE '{settings.sim_mode}'. Expected mock or fluka.",
+            f"Unsupported OOPSENHEIMER_SIM_MODE '{settings.sim_mode}'. Expected mock or fluka.",
         )
 
     try:

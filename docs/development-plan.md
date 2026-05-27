@@ -13,7 +13,7 @@ voxel scene JSON
 Important constraints:
 - Do not bundle or redistribute FLUKA.
 - FLUKA must be installed separately and configured through FLUKA_BIN.
-- Default local mode must be RADCRAFT_SIM_MODE=mock.
+- Default local mode must be OOPSENHEIMER_SIM_MODE=mock.
 - The first real demo is lead_wall.scene.json.
 - The first scoring output is a Cartesian dose map.
 - Keep the compiler modular because .vxl emission will need validation against real FLUKA/Flair.
@@ -64,9 +64,9 @@ Open frontend
 
 Milestone 2 is complete when this works on a FLUKA-installed machine:
 
-export RADCRAFT_SIM_MODE=fluka
+export OOPSENHEIMER_SIM_MODE=fluka
 export FLUKA_BIN=/path/to/fluka/bin
-radcraft compile packages/examples/lead_wall.scene.json --out ./job_001
+oopsenheimer compile packages/examples/lead_wall.scene.json --out ./job_001
 python scripts/validate_fluka_job.py ./job_001
 
 Milestone 3 is complete when a real FLUKA output is parsed and shown in the browser.

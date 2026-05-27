@@ -2,8 +2,8 @@ import numpy as np
 import pytest
 from pydantic import ValidationError
 
-from radcraft_compiler.compiler import expand_chunks, resolve_materials
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.compiler import expand_chunks, resolve_materials
+from oopsenheimer_compiler.schema import SceneDefinition
 from tests.test_chunk_expansion import make_scene
 
 

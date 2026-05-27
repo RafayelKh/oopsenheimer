@@ -7,8 +7,8 @@ import re
 
 import numpy as np
 
-from radcraft_compiler.schema import MaterialDefinition
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.schema import MaterialDefinition
+from oopsenheimer_compiler.schema import SceneDefinition
 
 FLUKA_NAME_RE = re.compile(r"^[A-Z][A-Z0-9_]{0,7}$")
 

@@ -2,9 +2,9 @@ services:
   postgres:
     image: postgres:16
     environment:
-      POSTGRES_DB: radcraft
-      POSTGRES_USER: radcraft
-      POSTGRES_PASSWORD: radcraft
+      POSTGRES_DB: oopsenheimer
+      POSTGRES_USER: oopsenheimer
+      POSTGRES_PASSWORD: oopsenheimer
     ports:
       - "5432:5432"
     volumes:
@@ -22,12 +22,12 @@ services:
       sh -lc "pip install --no-cache-dir -e apps/api -e packages/compiler -e workers/fluka_runner
       && uvicorn app.main:app --app-dir apps/api --host 0.0.0.0 --port 8000"
     environment:
-      DATABASE_URL: postgresql://radcraft:radcraft@postgres:5432/radcraft
+      DATABASE_URL: postgresql://oopsenheimer:oopsenheimer@postgres:5432/oopsenheimer
       REDIS_URL: redis://redis:6379/0
       CELERY_BROKER_URL: redis://redis:6379/0
       CELERY_RESULT_BACKEND: redis://redis:6379/0
-      RADCRAFT_CELERY_TASK_ALWAYS_EAGER: "true"
-      RADCRAFT_SIM_MODE: mock
+      OOPSENHEIMER_CELERY_TASK_ALWAYS_EAGER: "true"
+      OOPSENHEIMER_SIM_MODE: mock
       STORAGE_ROOT: /workspace/storage
     ports:
       - "8000:8000"
@@ -47,8 +47,8 @@ services:
     environment:
       CELERY_BROKER_URL: redis://redis:6379/0
       CELERY_RESULT_BACKEND: redis://redis:6379/0
-      RADCRAFT_CELERY_TASK_ALWAYS_EAGER: "false"
-      RADCRAFT_SIM_MODE: mock
+      OOPSENHEIMER_CELERY_TASK_ALWAYS_EAGER: "false"
+      OOPSENHEIMER_SIM_MODE: mock
       STORAGE_ROOT: /workspace/storage
     volumes:
       - .:/workspace

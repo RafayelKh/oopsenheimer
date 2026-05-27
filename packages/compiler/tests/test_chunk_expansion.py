@@ -1,12 +1,12 @@
 import pytest
 
-from radcraft_compiler.compiler import dense_grid_shape, expand_chunks
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.compiler import dense_grid_shape, expand_chunks
+from oopsenheimer_compiler.schema import SceneDefinition
 
 
 def make_scene(chunk: dict | None = None) -> SceneDefinition:
     data = {
-        "schema": "radcraft.scene.v1",
+        "schema": "oopsenheimer.scene.v1",
         "units": {"length": "cm", "energy": "GeV", "density": "g/cm3"},
         "world": {
             "id": "chunk_test",

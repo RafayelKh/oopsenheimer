@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://radcraft.local/schemas/scene.schema.json",
+  "$id": "https://oopsenheimer.local/schemas/scene.schema.json",
   "title": "Oops-enheimer Scene",
   "description": "Placeholder scene schema; implemented after compiler schemas are finalized.",
   "type": "object"

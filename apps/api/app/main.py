@@ -130,7 +130,7 @@ def get_example(example_id: str) -> dict[str, Any]:
 def create_scene(payload: dict[str, Any]) -> SceneRecord:
     scene_json = payload.get("sceneJson") or payload
 
-    if not isinstance(scene_json, dict) or scene_json.get("schema") != "radcraft.scene.v1":
+    if not isinstance(scene_json, dict) or scene_json.get("schema") != "oopsenheimer.scene.v1":
         raise HTTPException(status_code=422, detail="Expected Oops-enheimer scene JSON.")
 
     return store.create_scene(scene_json)

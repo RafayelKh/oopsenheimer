@@ -11,10 +11,10 @@ CLI_MODE=""
 CLI_FLUKA_BIN=""
 SETUP_ONLY=0
 SKIP_INSTALL=0
-RADCRAFT_MODE_WAS_SET=0
+OOPSENHEIMER_MODE_WAS_SET=0
 
-if [[ -n "${RADCRAFT_SIM_MODE+x}" ]]; then
-  RADCRAFT_MODE_WAS_SET=1
+if [[ -n "${OOPSENHEIMER_SIM_MODE+x}" ]]; then
+  OOPSENHEIMER_MODE_WAS_SET=1
 fi
 
 usage() {
@@ -158,8 +158,8 @@ ensure_runtime_env() {
   fi
 
   local selected_mode="$CLI_MODE"
-  if [[ -z "$selected_mode" && "$RADCRAFT_MODE_WAS_SET" -eq 1 ]]; then
-    selected_mode="${RADCRAFT_SIM_MODE:-}"
+  if [[ -z "$selected_mode" && "$OOPSENHEIMER_MODE_WAS_SET" -eq 1 ]]; then
+    selected_mode="${OOPSENHEIMER_SIM_MODE:-}"
   fi
   if [[ -z "$selected_mode" ]]; then
     selected_mode="auto"
@@ -168,20 +168,20 @@ ensure_runtime_env() {
   case "$selected_mode" in
     auto)
       if [[ -n "${FLUKA_BIN:-}" && -x "$FLUKA_BIN/rfluka" ]]; then
-        RADCRAFT_SIM_MODE="fluka"
+        OOPSENHEIMER_SIM_MODE="fluka"
       else
-        RADCRAFT_SIM_MODE="mock"
+        OOPSENHEIMER_SIM_MODE="mock"
       fi
       ;;
     mock|fluka)
-      RADCRAFT_SIM_MODE="$selected_mode"
+      OOPSENHEIMER_SIM_MODE="$selected_mode"
       ;;
     *)
       die "--mode must be one of: auto, mock, fluka"
       ;;
   esac
 
-  if [[ "$RADCRAFT_SIM_MODE" == "fluka" ]]; then
+  if [[ "$OOPSENHEIMER_SIM_MODE" == "fluka" ]]; then
     [[ -n "${FLUKA_BIN:-}" ]] || die "FLUKA_BIN is required in fluka mode"
     [[ -x "$FLUKA_BIN/rfluka" ]] || die "missing executable: $FLUKA_BIN/rfluka"
     [[ -x "$FLUKA_BIN/usbsuw" ]] || die "missing executable: $FLUKA_BIN/usbsuw"
@@ -189,11 +189,11 @@ ensure_runtime_env() {
     export FLUKA_BIN
   fi
 
-  export RADCRAFT_SIM_MODE
+  export OOPSENHEIMER_SIM_MODE
   export NEXT_PUBLIC_API_BASE_URL="http://$API_HOST:$API_PORT"
 
-  log "Simulation mode: $RADCRAFT_SIM_MODE"
-  if [[ "$RADCRAFT_SIM_MODE" == "fluka" ]]; then
+  log "Simulation mode: $OOPSENHEIMER_SIM_MODE"
+  if [[ "$OOPSENHEIMER_SIM_MODE" == "fluka" ]]; then
     log "FLUKA_BIN: $FLUKA_BIN"
   fi
   log "Storage: $STORAGE_ROOT"

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { artifactDownloadUrl } from "@/lib/api";
 import { doseColor, doseUnit, formatDoseWithUnit, parseNpyFloat32 } from "@/lib/npy";
-import type { ArtifactSummary } from "@/types/radcraft";
+import type { ArtifactSummary } from "@/types/oopsenheimer";
 
 type ParsedResult = NonNullable<ArtifactSummary["parsedResult"]>;
 type Axis = "x" | "y" | "z";

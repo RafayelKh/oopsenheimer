@@ -1,7 +1,7 @@
 "use client";
 
 import { create } from "zustand";
-import type { JobStatus } from "@/types/radcraft";
+import type { JobStatus } from "@/types/oopsenheimer";
 
 type OopsEnheimerState = {
   activeSceneId: string | null;

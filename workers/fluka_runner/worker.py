@@ -14,15 +14,15 @@ class WorkerSettings(BaseSettings):
 
     celery_broker_url: str = Field(default="redis://localhost:6379/0", alias="CELERY_BROKER_URL")
     celery_result_backend: str = Field(default="redis://localhost:6379/0", alias="CELERY_RESULT_BACKEND")
-    celery_task_always_eager: bool = Field(default=True, alias="RADCRAFT_CELERY_TASK_ALWAYS_EAGER")
+    celery_task_always_eager: bool = Field(default=True, alias="OOPSENHEIMER_CELERY_TASK_ALWAYS_EAGER")
     storage_root: Path = Field(default=Path("storage"), alias="STORAGE_ROOT")
-    sim_mode: str = Field(default="mock", alias="RADCRAFT_SIM_MODE")
+    sim_mode: str = Field(default="mock", alias="OOPSENHEIMER_SIM_MODE")
 
 
 settings = WorkerSettings()
 
 celery_app = Celery(
-    "radcraft_fluka_runner",
+    "oopsenheimer_fluka_runner",
     broker=settings.celery_broker_url,
     backend=settings.celery_result_backend,
     include=["tasks"],

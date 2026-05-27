@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header className="header">
       <Link href="/" className="brand">
-        <span className="brand-mark" />
+        <img aria-hidden="true" className="brand-logo" src="/oopsenheimer.svg" alt="" />
         <span>Oops-enheimer</span>
       </Link>
       <nav className="header-nav" aria-label="Primary">

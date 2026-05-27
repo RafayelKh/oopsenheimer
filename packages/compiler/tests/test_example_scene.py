@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.schema import SceneDefinition
 
 
 def test_lead_wall_example_loads() -> None:

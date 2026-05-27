@@ -2,7 +2,7 @@
 
 Create this monorepo:
 
-radcraft/
+oopsenheimer/
   README.md
   .gitignore
   .env.example
@@ -29,7 +29,7 @@ radcraft/
   packages/
     compiler/
       pyproject.toml
-      radcraft_compiler/
+      oopsenheimer_compiler/
         __init__.py
         cli.py
         schema.py
@@ -70,7 +70,7 @@ radcraft/
 The first version should support this schema shape:
 
 {
-  "schema": "radcraft.scene.v1",
+  "schema": "oopsenheimer.scene.v1",
   "units": {
     "length": "cm",
     "energy": "GeV",
@@ -137,7 +137,7 @@ The first version should support this schema shape:
 3.2 Manifest JSON
 
 {
-  "schema": "radcraft.manifest.v1",
+  "schema": "oopsenheimer.manifest.v1",
   "files": {
     "input": "scene.inp",
     "voxel": "scene.vxl",

@@ -1,5 +1,5 @@
 [project]
-name = "radcraft-compiler"
+name = "oopsenheimer-compiler"
 version = "0.0.0"
 description = "Oops-enheimer scene-to-FLUKA compiler."
 requires-python = ">=3.11"
@@ -15,14 +15,14 @@ dev = [
 ]
 
 [project.scripts]
-radcraft = "radcraft_compiler.cli:main"
+oopsenheimer = "oopsenheimer_compiler.cli:main"
 
 [build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["radcraft_compiler*"]
+include = ["oopsenheimer_compiler*"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

@@ -1,12 +1,12 @@
 import pytest
 from pydantic import ValidationError
 
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.schema import SceneDefinition
 
 
 def valid_scene() -> dict:
     return {
-        "schema": "radcraft.scene.v1",
+        "schema": "oopsenheimer.scene.v1",
         "units": {"length": "cm", "energy": "GeV", "density": "g/cm3"},
         "world": {
             "id": "unit_test_scene",
@@ -100,7 +100,7 @@ def valid_scene() -> dict:
 
 def test_valid_scene_loads() -> None:
     scene = SceneDefinition.model_validate(valid_scene())
-    assert scene.schema_ == "radcraft.scene.v1"
+    assert scene.schema_ == "oopsenheimer.scene.v1"
     assert scene.world.grid.dims == (2, 2, 1)
     assert scene.sources[0].particle == "PHOTON"
 

@@ -1407,7 +1407,7 @@ function countMaterials(grid: MaterialId[]): Record<string, number> {
 function buildSceneJson(grid: MaterialId[], beamSettings: BeamSettings): Record<string, unknown> {
   const maxCm = dims.map((value, index) => value * voxelSizeCm[index]);
   return {
-    schema: "radcraft.scene.v1",
+    schema: "oopsenheimer.scene.v1",
     units: { length: "cm", energy: "GeV", density: "g/cm3" },
     world: {
       id: "editor_scene",

@@ -5,12 +5,12 @@ from pathlib import Path
 from pydantic import ValidationError
 import typer
 
-from radcraft_compiler.compiler import expand_chunks, resolve_materials
-from radcraft_compiler.emit_inp import emit_inp
-from radcraft_compiler.emit_vxl import emit_vxl
-from radcraft_compiler.manifest import VXL_PLACEHOLDER_WARNING, emit_manifest, emit_meta
-from radcraft_compiler.organ_map import build_organ_map
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.compiler import expand_chunks, resolve_materials
+from oopsenheimer_compiler.emit_inp import emit_inp
+from oopsenheimer_compiler.emit_vxl import emit_vxl
+from oopsenheimer_compiler.manifest import VXL_PLACEHOLDER_WARNING, emit_manifest, emit_meta
+from oopsenheimer_compiler.organ_map import build_organ_map
+from oopsenheimer_compiler.schema import SceneDefinition
 
 app = typer.Typer(help="Oops-enheimer compiler tools.", no_args_is_help=True)
 

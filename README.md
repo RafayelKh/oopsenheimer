@@ -1,5 +1,9 @@
 # Oops-enheimer
 
+<p align="center">
+  <img src="apps/web/public/oopsenheimer.svg" alt="Oops-enheimer logo" width="128" />
+</p>
+
 Oops-enheimer is a local educational prototype for building simple voxel radiation-shielding scenes, compiling them into FLUKA-oriented simulation artifacts, running them through an external FLUKA installation when available, and visualizing dose or fluence outputs back in a browser-based voxel world.
 
 FLUKA is not bundled or redistributed with this project. Mock mode is the default local development path.
@@ -62,7 +66,7 @@ In separate terminals:
 
 ```bash
 cd apps/api
-RADCRAFT_SIM_MODE=mock STORAGE_ROOT=../../storage python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+OOPSENHEIMER_SIM_MODE=mock STORAGE_ROOT=../../storage python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 ```bash
@@ -74,7 +78,7 @@ NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000 npm run dev -- --hostname 127.0.0
 
 ```bash
 cd packages/compiler
-python -m radcraft_compiler.cli compile ../examples/lead_wall.scene.json --out ../../job_001
+python -m oopsenheimer_compiler.cli compile ../examples/lead_wall.scene.json --out ../../job_001
 ```
 
 Expected files:
@@ -94,9 +98,9 @@ Install FLUKA separately and accept the appropriate FLUKA license terms before u
 ```bash
 export FLUKA_BIN=/path/to/fluka/bin
 cd packages/compiler
-python -m radcraft_compiler.cli compile ../examples/lead_wall.scene.json --out /tmp/radcraft_fluka_job
+python -m oopsenheimer_compiler.cli compile ../examples/lead_wall.scene.json --out /tmp/oopsenheimer_fluka_job
 cd ../..
-python scripts/validate_fluka_job.py /tmp/radcraft_fluka_job
+python scripts/validate_fluka_job.py /tmp/oopsenheimer_fluka_job
 ```
 
 To parse the generated USRBIN output:
@@ -110,7 +114,7 @@ import sys
 sys.path.insert(0, "workers/fluka_runner")
 from parser import parse_usrbin_outputs
 
-job_dir = Path("/tmp/radcraft_fluka_job")
+job_dir = Path("/tmp/oopsenheimer_fluka_job")
 manifest = json.loads((job_dir / "scene.map.json").read_text())
 result = parse_usrbin_outputs(job_dir, manifest, sim_mode="fluka")
 print(result.metadata_path)
@@ -121,7 +125,7 @@ PY
 For the full API/worker path, start the API with real mode enabled. In the current local setup, Celery runs eagerly by default, so the API process executes the compile/run/parse chain:
 
 ```bash
-export RADCRAFT_SIM_MODE=fluka
+export OOPSENHEIMER_SIM_MODE=fluka
 export FLUKA_BIN=/path/to/fluka/bin
 cd apps/api
 STORAGE_ROOT=../../storage python -m uvicorn app.main:app --host 127.0.0.1 --port 8000

@@ -1,5 +1,5 @@
 [project]
-name = "radcraft-api"
+name = "oopsenheimer-api"
 version = "0.0.0"
 description = "Oops-enheimer API service."
 requires-python = ">=3.11"

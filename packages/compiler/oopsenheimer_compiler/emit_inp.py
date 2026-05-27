@@ -7,8 +7,8 @@ from pathlib import Path
 
 import numpy as np
 
-from radcraft_compiler.compiler import expand_chunks, resolve_materials
-from radcraft_compiler.fluka_cards import (
+from oopsenheimer_compiler.compiler import expand_chunks, resolve_materials
+from oopsenheimer_compiler.fluka_cards import (
     AssignMatCard,
     BeamCard,
     BeamPosCard,
@@ -21,8 +21,8 @@ from radcraft_compiler.fluka_cards import (
     UsrbinCard,
     render_comment,
 )
-from radcraft_compiler.organ_map import OrganMap
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.organ_map import OrganMap
+from oopsenheimer_compiler.schema import SceneDefinition
 
 
 @dataclass(frozen=True)

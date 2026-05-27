@@ -6,7 +6,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import { artifactDownloadUrl } from "@/lib/api";
 import { doseUnit, formatDoseWithUnit, normalizedDose, parseNpyFloat32 } from "@/lib/npy";
-import type { ArtifactSummary } from "@/types/radcraft";
+import type { ArtifactSummary } from "@/types/oopsenheimer";
 
 type ParsedResult = NonNullable<ArtifactSummary["parsedResult"]>;
 

@@ -29,7 +29,7 @@ def test_can_download_scene_inp_and_manifest(tmp_path: Path) -> None:
     assert inp_response.status_code == 200
     assert "START" in inp_response.text
     assert manifest_response.status_code == 200
-    assert manifest_response.json()["schema"] == "radcraft.manifest.v1"
+    assert manifest_response.json()["schema"] == "oopsenheimer.manifest.v1"
 
 
 def test_artifact_download_rejects_path_traversal(tmp_path: Path) -> None:

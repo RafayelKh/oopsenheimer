@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://radcraft.local/schemas/manifest.schema.json",
+  "$id": "https://oopsenheimer.local/schemas/manifest.schema.json",
   "title": "Oops-enheimer Manifest",
   "description": "Placeholder manifest schema; implemented after compiler manifest output is finalized.",
   "type": "object"

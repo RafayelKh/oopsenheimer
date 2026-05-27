@@ -7,7 +7,7 @@ def test_get_lead_wall_example_returns_scene_json() -> None:
     response = TestClient(app).get("/examples/lead_wall")
 
     assert response.status_code == 200
-    assert response.json()["schema"] == "radcraft.scene.v1"
+    assert response.json()["schema"] == "oopsenheimer.scene.v1"
 
 
 def test_get_examples_lists_demo_scenes() -> None:

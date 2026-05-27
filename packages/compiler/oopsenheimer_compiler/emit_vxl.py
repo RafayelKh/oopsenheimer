@@ -10,8 +10,8 @@ from pathlib import Path
 
 import numpy as np
 
-from radcraft_compiler.compiler import dense_grid_shape
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.compiler import dense_grid_shape
+from oopsenheimer_compiler.schema import SceneDefinition
 
 
 def organ_ids_x_fastest(organ_id_grid: np.ndarray) -> list[int]:
@@ -31,7 +31,7 @@ def render_vxl_placeholder(scene: SceneDefinition, organ_id_grid: np.ndarray) ->
     lines = [
         "# Oops-enheimer placeholder voxel file",
         "# TODO: replace with FLUKA/Flair-validated unformatted .vxl writer.",
-        "schema=radcraft.vxl.placeholder.v1",
+        "schema=oopsenheimer.vxl.placeholder.v1",
         f"dims={nx} {ny} {nz}",
         "voxelSizeCm="
         + " ".join(str(value) for value in scene.world.grid.voxel_size_cm),

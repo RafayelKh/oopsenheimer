@@ -55,7 +55,7 @@ def test_real_parser_converts_usbrea_text_to_dose_map(tmp_path: Path, monkeypatc
         assert capture_output is True
         assert check is False
         if Path(command[0]).name == "usbrea":
-            (tmp_path / "radcraft_usrbin_readout.txt").write_text(
+            (tmp_path / "oopsenheimer_usrbin_readout.txt").write_text(
                 """
  Cartesian binning n. 1 "dose_map", generalized particle n. 228
  X coordinate: from 0.0000E+00 to 2.0000E+01 cm, 4 bins
@@ -76,7 +76,7 @@ def test_real_parser_converts_usbrea_text_to_dose_map(tmp_path: Path, monkeypatc
     assert calls == ["usbsuw", "usbrea"]
     metadata = json.loads(result.metadata_path.read_text())
     values = np.load(result.values_path)
-    assert metadata["source"] == "radcraft_usrbin_readout.txt"
+    assert metadata["source"] == "oopsenheimer_usrbin_readout.txt"
     assert metadata["unit"] == "GeV/g"
     assert metadata["dims"] == [4, 2, 1]
     assert metadata["min"] == 1.0

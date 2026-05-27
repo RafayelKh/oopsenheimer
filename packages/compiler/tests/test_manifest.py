@@ -3,9 +3,9 @@ from pathlib import Path
 
 from typer.testing import CliRunner
 
-from radcraft_compiler.cli import app
-from radcraft_compiler.manifest import build_manifest, emit_manifest
-from radcraft_compiler.organ_map import build_organ_map
+from oopsenheimer_compiler.cli import app
+from oopsenheimer_compiler.manifest import build_manifest, emit_manifest
+from oopsenheimer_compiler.organ_map import build_organ_map
 from tests.test_emit_inp import load_example
 
 
@@ -14,7 +14,7 @@ def test_build_manifest_includes_required_sections() -> None:
     organ_map = build_organ_map(scene)
     manifest = build_manifest(scene, organ_map)
 
-    assert manifest["schema"] == "radcraft.manifest.v1"
+    assert manifest["schema"] == "oopsenheimer.manifest.v1"
     assert manifest["files"]["input"] == "scene.inp"
     assert manifest["files"]["voxel"] == "scene.vxl"
     assert manifest["coordinateTransform"]["voxelIndexToCm"]["originCm"] == [0.0, 0.0, 0.0]
@@ -38,7 +38,7 @@ def test_emit_manifest_writes_indented_json(tmp_path: Path) -> None:
     output_path = emit_manifest(scene, build_organ_map(scene), tmp_path / "scene.map.json")
 
     data = json.loads(output_path.read_text())
-    assert data["schema"] == "radcraft.manifest.v1"
+    assert data["schema"] == "oopsenheimer.manifest.v1"
     assert output_path.read_text().startswith("{\n  ")
 
 

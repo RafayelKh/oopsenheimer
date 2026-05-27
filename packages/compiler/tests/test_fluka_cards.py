@@ -1,4 +1,4 @@
-from radcraft_compiler.fluka_cards import (
+from oopsenheimer_compiler.fluka_cards import (
     AssignMatCard,
     BeamCard,
     BeamPosCard,

@@ -1,5 +1,5 @@
 .header {
-  height: 56px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,12 +19,11 @@
   font-weight: 700;
 }
 
-.brand-mark {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  border: 2px solid var(--accent);
-  box-shadow: inset 0 0 0 4px var(--bg);
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  display: block;
+  flex: 0 0 auto;
 }
 
 .header-nav {

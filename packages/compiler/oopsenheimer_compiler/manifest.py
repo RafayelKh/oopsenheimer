@@ -6,8 +6,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from radcraft_compiler.organ_map import OrganMap
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.organ_map import OrganMap
+from oopsenheimer_compiler.schema import SceneDefinition
 
 VXL_PLACEHOLDER_WARNING = (
     "scene.vxl is a Oops-enheimer placeholder. Real FLUKA runs currently use the generated "
@@ -21,7 +21,7 @@ def build_manifest(
     warnings: list[str] | None = None,
 ) -> dict[str, Any]:
     return {
-        "schema": "radcraft.manifest.v1",
+        "schema": "oopsenheimer.manifest.v1",
         "files": {
             "input": scene.emit.fluka_input.filename,
             "voxel": scene.emit.voxel_file.filename,
@@ -86,7 +86,7 @@ def emit_manifest(
 def build_meta(scene: SceneDefinition, voxel_count: int, organ_count: int) -> dict[str, Any]:
     nx, ny, nz = scene.world.grid.dims
     return {
-        "schema": "radcraft.meta.v1",
+        "schema": "oopsenheimer.meta.v1",
         "compilerVersion": "0.0.0",
         "worldId": scene.world.id,
         "dims": [nx, ny, nz],

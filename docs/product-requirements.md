@@ -172,7 +172,7 @@ FLUKA’s official scoring resources include 3D distributions with USRBIN, so th
 
 The MVP is done when this command works locally:
 
-radcraft compile packages/examples/lead_wall.scene.json --out ./job_001
+oopsenheimer compile packages/examples/lead_wall.scene.json --out ./job_001
 
 and produces:
 
@@ -184,7 +184,7 @@ job_001/
 
 Then this works:
 
-radcraft run ./job_001
+oopsenheimer run ./job_001
 
 and produces:
 

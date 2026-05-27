@@ -71,8 +71,8 @@ def _parse_real_usrbin_outputs(job_dir: Path, manifest: dict[str, Any]) -> Parse
     if not usrbin_files:
         raise FileNotFoundError(f"No USRBIN fort.21 file found in {job_dir}")
 
-    sum_prefix = "radcraft_usrbin_sum"
-    readout_file = job_dir / "radcraft_usrbin_readout.txt"
+    sum_prefix = "oopsenheimer_usrbin_sum"
+    readout_file = job_dir / "oopsenheimer_usrbin_readout.txt"
     usbsuw = Path(fluka_bin) / "usbsuw"
     usbrea = Path(fluka_bin) / "usbrea"
 

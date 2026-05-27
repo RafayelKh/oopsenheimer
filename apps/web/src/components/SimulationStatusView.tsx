@@ -6,7 +6,7 @@ import { DoseVolumeViewer } from "@/components/DoseVolumeViewer";
 import { JobStatusBadge } from "@/components/JobStatusBadge";
 import { SimulationProgressBar } from "@/components/SimulationProgressBar";
 import { getSimulation, getSimulationArtifacts } from "@/lib/api";
-import type { ArtifactSummary, JobStatus } from "@/types/radcraft";
+import type { ArtifactSummary, JobStatus } from "@/types/oopsenheimer";
 import type { SimulationRecord } from "@/lib/api";
 
 type SimulationStatusViewProps = {

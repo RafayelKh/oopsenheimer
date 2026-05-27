@@ -39,7 +39,7 @@ Goal: Set up packages/compiler.
 
 Instructions for Codex:
 
-Inside packages/compiler, create a Python package named radcraft_compiler using pyproject.toml.
+Inside packages/compiler, create a Python package named oopsenheimer_compiler using pyproject.toml.
 Use:
 - Python >= 3.11
 - pydantic
@@ -57,11 +57,11 @@ Create modules:
 - validation.py
 - cli.py
 Expose a CLI command:
-radcraft compile <scene_json> --out <output_dir>
+oopsenheimer compile <scene_json> --out <output_dir>
 
 Acceptance criteria:
 
-python -m radcraft_compiler.cli --help works.
+python -m oopsenheimer_compiler.cli --help works.
 pytest runs with at least one placeholder test.
 
 ⸻
@@ -72,7 +72,7 @@ Goal: Validate scene JSON strictly.
 
 Instructions for Codex:
 
-Implement Pydantic models in packages/compiler/radcraft_compiler/schema.py for:
+Implement Pydantic models in packages/compiler/oopsenheimer_compiler/schema.py for:
 - Units
 - Grid
 - Boundary
@@ -87,7 +87,7 @@ Implement Pydantic models in packages/compiler/radcraft_compiler/schema.py for:
 - EmitSettings
 - SceneDefinition
 Add validation rules:
-- schema must equal "radcraft.scene.v1"
+- schema must equal "oopsenheimer.scene.v1"
 - units.length must be "cm"
 - units.energy must be "GeV"
 - grid.dims values must be positive integers
@@ -270,7 +270,7 @@ If exact FLUKA voxel syntax is uncertain, mark the output with a clear TODO comm
 
 Acceptance criteria:
 
-radcraft compile example --out job creates scene.inp.
+oopsenheimer compile example --out job creates scene.inp.
 scene.inp includes material assignment lines for VOXEL001+.
 scene.inp includes a scoring card.
 scene.inp includes START with scene.run.histories.
@@ -331,12 +331,12 @@ Every organ has organId, flukaRegionName, materialId, voxelCount, bboxIndex.
 
 Task 012 — Implement compiler CLI end-to-end
 
-Goal: Make radcraft compile useful.
+Goal: Make oopsenheimer compile useful.
 
 Instructions for Codex:
 
 Implement CLI:
-radcraft compile <scene_json> --out <output_dir>
+oopsenheimer compile <scene_json> --out <output_dir>
 Steps:
 1. Load JSON.
 2. Validate with Pydantic.
@@ -484,7 +484,7 @@ Instructions for Codex:
 Modify compile_scene_task:
 - Load scene from DB/storage.
 - Create storage/jobs/{simulation_id}/.
-- Call radcraft_compiler compile functions directly, not shell command.
+- Call oopsenheimer_compiler compile functions directly, not shell command.
 - Write scene.inp, scene.vxl, scene.map.json, scene.meta.json.
 - Update status to compiled.
 - On error, update status to failed with error message.
@@ -530,7 +530,7 @@ Goal: Allow development without FLUKA installed.
 Instructions for Codex:
 
 Add env var:
-RADCRAFT_SIM_MODE=mock|fluka
+OOPSENHEIMER_SIM_MODE=mock|fluka
 In mock mode:
 - do not call rfluka
 - generate fake dose_map.json and fake dose_map.npy
@@ -793,7 +793,7 @@ Implement docker-compose.yml with:
 - web
 Important:
 Do not include FLUKA in Docker image.
-Use RADCRAFT_SIM_MODE=mock by default.
+Use OOPSENHEIMER_SIM_MODE=mock by default.
 Mount ./storage.
 
 Acceptance criteria:

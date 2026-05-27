@@ -7,8 +7,8 @@ from typing import Any
 
 import numpy as np
 
-from radcraft_compiler.compiler import expand_chunks, resolve_materials
-from radcraft_compiler.schema import SceneDefinition
+from oopsenheimer_compiler.compiler import expand_chunks, resolve_materials
+from oopsenheimer_compiler.schema import SceneDefinition
 
 
 @dataclass(frozen=True)

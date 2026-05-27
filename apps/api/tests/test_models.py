@@ -18,14 +18,14 @@ def test_scene_can_be_inserted() -> None:
     Base.metadata.create_all(engine)
 
     with Session(engine) as session:
-        scene = Scene(name="lead_wall_demo", scene_json={"schema": "radcraft.scene.v1"})
+        scene = Scene(name="lead_wall_demo", scene_json={"schema": "oopsenheimer.scene.v1"})
         session.add(scene)
         session.commit()
 
         inserted = session.scalar(select(Scene).where(Scene.name == "lead_wall_demo"))
 
     assert inserted is not None
-    assert inserted.scene_json["schema"] == "radcraft.scene.v1"
+    assert inserted.scene_json["schema"] == "oopsenheimer.scene.v1"
 
 
 def test_simulation_job_can_be_inserted_and_status_updated() -> None:
@@ -33,7 +33,7 @@ def test_simulation_job_can_be_inserted_and_status_updated() -> None:
     Base.metadata.create_all(engine)
 
     with Session(engine) as session:
-        scene = Scene(name="lead_wall_demo", scene_json={"schema": "radcraft.scene.v1"})
+        scene = Scene(name="lead_wall_demo", scene_json={"schema": "oopsenheimer.scene.v1"})
         session.add(scene)
         session.flush()
 

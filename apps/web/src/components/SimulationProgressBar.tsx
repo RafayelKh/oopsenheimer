@@ -1,4 +1,4 @@
-import type { JobStatus } from "@/types/radcraft";
+import type { JobStatus } from "@/types/oopsenheimer";
 
 const statusProgress: Record<JobStatus, number> = {
   queued: 0,
