@@ -1,4 +1,4 @@
-# Oops-enheimer
+# Oopsenheimer
 
 <p align="center">
   <img src="apps/web/public/oopsenheimer.svg" alt="Oops-enheimer logo" width="128" />
