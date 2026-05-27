@@ -1,0 +1,6258 @@
+{
+  "schema": "radcraft.scene.v1",
+  "units": {
+    "length": "cm",
+    "energy": "GeV",
+    "density": "g/cm3"
+  },
+  "world": {
+    "id": "bus",
+    "grid": {
+      "dims": [
+        48,
+        24,
+        24
+      ],
+      "voxelSizeCm": [
+        3.3333333333333335,
+        3.3333333333333335,
+        3.3333333333333335
+      ],
+      "originCm": [
+        0,
+        0,
+        0
+      ],
+      "axisOrder": "x-fastest"
+    },
+    "boundary": {
+      "outsideMaterialId": "air",
+      "blackholeMarginCm": 100,
+      "worldAirMarginCm": 50
+    },
+    "palette": {
+      "air": {
+        "materialId": "air",
+        "label": "Air",
+        "color": "#cfe8ff"
+      },
+      "lead": {
+        "materialId": "lead",
+        "label": "Lead",
+        "color": "#4b5563"
+      },
+      "water": {
+        "materialId": "water",
+        "label": "Water",
+        "color": "#38bdf8"
+      },
+      "concrete": {
+        "materialId": "concrete",
+        "label": "Concrete",
+        "color": "#9ca3af"
+      },
+      "silicon": {
+        "materialId": "silicon",
+        "label": "Silicon",
+        "color": "#f59e0b"
+      },
+      "wood": {
+        "materialId": "wood",
+        "label": "Wood",
+        "color": "#8b5a2b"
+      },
+      "glass": {
+        "materialId": "glass",
+        "label": "Glass",
+        "color": "#9be7ff"
+      },
+      "tissue": {
+        "materialId": "tissue",
+        "label": "Human tissue",
+        "color": "#f2a7a0"
+      },
+      "steel": {
+        "materialId": "steel",
+        "label": "Painted steel",
+        "color": "#7c8794"
+      },
+      "rubber": {
+        "materialId": "rubber",
+        "label": "Rubber",
+        "color": "#101820"
+      },
+      "plastic": {
+        "materialId": "plastic",
+        "label": "Plastic",
+        "color": "#facc15"
+      }
+    },
+    "chunks": [
+      {
+        "id": "main",
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          48,
+          24,
+          24
+        ],
+        "encoding": "rle",
+        "runs": [
+          {
+            "blockId": "air",
+            "count": 4658
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 7
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "concrete",
+            "count": 12
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "concrete",
+            "count": 12
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "concrete",
+            "count": 7
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 15
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 14
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 15
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 17
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 12
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 12
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 827
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 6
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 9
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 14
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 14
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 14
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 15
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 826
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 16
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 12
+          },
+          {
+            "blockId": "steel",
+            "count": 4
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 4
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "steel",
+            "count": 33
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 30
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 30
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 30
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 30
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 3
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 3
+          },
+          {
+            "blockId": "steel",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 7
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 7
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 30
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 30
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 30
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 30
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 30
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "tissue",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 30
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 7
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 7
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "tissue",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "plastic",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 6
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 3
+          },
+          {
+            "blockId": "tissue",
+            "count": 3
+          },
+          {
+            "blockId": "air",
+            "count": 1
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "air",
+            "count": 34
+          },
+          {
+            "blockId": "plastic",
+            "count": 1
+          },
+          {
+            "blockId": "glass",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 102
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 16
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 12
+          },
+          {
+            "blockId": "steel",
+            "count": 4
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 4
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "plastic",
+            "count": 2
+          },
+          {
+            "blockId": "glass",
+            "count": 4
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "plastic",
+            "count": 36
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "steel",
+            "count": 40
+          },
+          {
+            "blockId": "air",
+            "count": 294
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 6
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 9
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 14
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 14
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "steel",
+            "count": 2
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 14
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 15
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 826
+          },
+          {
+            "blockId": "concrete",
+            "count": 44
+          },
+          {
+            "blockId": "air",
+            "count": 4
+          },
+          {
+            "blockId": "concrete",
+            "count": 7
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "concrete",
+            "count": 12
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "concrete",
+            "count": 12
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "concrete",
+            "count": 7
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 15
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 14
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 8
+          },
+          {
+            "blockId": "rubber",
+            "count": 6
+          },
+          {
+            "blockId": "air",
+            "count": 15
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 10
+          },
+          {
+            "blockId": "rubber",
+            "count": 4
+          },
+          {
+            "blockId": "air",
+            "count": 17
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 12
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 12
+          },
+          {
+            "blockId": "rubber",
+            "count": 2
+          },
+          {
+            "blockId": "air",
+            "count": 5385
+          }
+        ]
+      }
+    ],
+    "organPolicy": {
+      "mode": "merge_by_material_and_tag",
+      "maxOrgans": 32767,
+      "reserveOrganZeroForOutside": true,
+      "splitRules": [],
+      "fallback": {
+        "onTooManyOrgans": "reject_scene"
+      }
+    }
+  },
+  "materials": {
+    "air": {
+      "flukaName": "AIR",
+      "density": 0.00120479,
+      "label": "Air",
+      "color": "#cfe8ff"
+    },
+    "lead": {
+      "flukaName": "LEAD",
+      "density": 11.35,
+      "label": "Lead",
+      "color": "#4b5563"
+    },
+    "water": {
+      "flukaName": "WATER",
+      "density": 1.0,
+      "label": "Water",
+      "color": "#38bdf8"
+    },
+    "concrete": {
+      "flukaName": "CONCRETE",
+      "density": 2.3,
+      "label": "Concrete",
+      "color": "#9ca3af"
+    },
+    "silicon": {
+      "flukaName": "SILICON",
+      "density": 2.329,
+      "label": "Silicon",
+      "color": "#f59e0b"
+    },
+    "wood": {
+      "flukaName": "WOOD",
+      "density": 0.7,
+      "label": "Wood",
+      "color": "#8b5a2b"
+    },
+    "glass": {
+      "flukaName": "GLASS",
+      "density": 2.5,
+      "label": "Glass",
+      "color": "#9be7ff"
+    },
+    "tissue": {
+      "flukaName": "TISSUE",
+      "density": 1.0,
+      "label": "Human tissue",
+      "color": "#f2a7a0"
+    },
+    "steel": {
+      "flukaName": "STEEL",
+      "density": 7.85,
+      "label": "Painted steel",
+      "color": "#7c8794"
+    },
+    "rubber": {
+      "flukaName": "RUBBER",
+      "density": 1.1,
+      "label": "Rubber",
+      "color": "#101820"
+    },
+    "plastic": {
+      "flukaName": "PLASTIC",
+      "density": 0.95,
+      "label": "Plastic",
+      "color": "#facc15"
+    }
+  },
+  "sources": [
+    {
+      "id": "photon_beam",
+      "type": "photon_beam",
+      "particle": "photon",
+      "energyGeV": 0.001,
+      "positionCm": [
+        81.6666666667,
+        41.6666666667,
+        -10
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "scoring": [
+    {
+      "id": "dose_map",
+      "type": "usrbin_cartesian",
+      "quantity": "DOSE",
+      "dims": [
+        48,
+        24,
+        24
+      ],
+      "minCm": [
+        0,
+        0,
+        0
+      ],
+      "maxCm": [
+        160,
+        80,
+        80
+      ]
+    }
+  ],
+  "run": {
+    "defaults": "PRECISIO",
+    "histories": 100000,
+    "randomSeed": 32345,
+    "cycles": 1,
+    "validation": {
+      "geometryDebug": true
+    }
+  },
+  "emit": {
+    "backend": "fluka_voxel",
+    "flukaInput": {
+      "filename": "scene.inp",
+      "title": "Oops-enheimer bus voxel demo",
+      "includeComments": true
+    },
+    "voxelFile": {
+      "filename": "scene.vxl",
+      "format": "fluka_unformatted_vxl",
+      "compactOrganIds": true
+    },
+    "manifest": {
+      "filename": "scene.map.json",
+      "includeVoxelToOrganMap": false,
+      "includeOrganToRegionMap": true,
+      "includeMaterialMap": true
+    }
+  }
+}

@@ -1,0 +1,840 @@
+{
+  "schema": "radcraft.scene.v1",
+  "units": {
+    "length": "cm",
+    "energy": "GeV",
+    "density": "g/cm3"
+  },
+  "world": {
+    "id": "water_phantom",
+    "grid": {
+      "dims": [
+        48,
+        24,
+        24
+      ],
+      "voxelSizeCm": [
+        3.3333333333333335,
+        3.3333333333333335,
+        3.3333333333333335
+      ],
+      "originCm": [
+        0,
+        0,
+        0
+      ],
+      "axisOrder": "x-fastest"
+    },
+    "boundary": {
+      "outsideMaterialId": "air",
+      "blackholeMarginCm": 100,
+      "worldAirMarginCm": 50
+    },
+    "palette": {
+      "air": {
+        "materialId": "air",
+        "label": "Air",
+        "color": "#cfe8ff"
+      },
+      "lead": {
+        "materialId": "lead",
+        "label": "Lead shielding",
+        "color": "#4b5563"
+      },
+      "water": {
+        "materialId": "water",
+        "label": "Water",
+        "color": "#38bdf8"
+      },
+      "concrete": {
+        "materialId": "concrete",
+        "label": "Concrete",
+        "color": "#9ca3af"
+      },
+      "silicon": {
+        "materialId": "silicon",
+        "label": "Silicon detector material",
+        "color": "#f59e0b"
+      }
+    },
+    "chunks": [
+      {
+        "id": "main",
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          48,
+          24,
+          24
+        ],
+        "encoding": "rle",
+        "runs": [
+          {
+            "blockId": "air",
+            "count": 9216
+          },
+          {
+            "blockId": "lead",
+            "count": 502
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 43
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 43
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 43
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 43
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 955
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 43
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 43
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 43
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 43
+          },
+          {
+            "blockId": "air",
+            "count": 5
+          },
+          {
+            "blockId": "lead",
+            "count": 453
+          },
+          {
+            "blockId": "air",
+            "count": 3808
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 704
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 704
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 704
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 704
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 704
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 704
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 32
+          },
+          {
+            "blockId": "water",
+            "count": 16
+          },
+          {
+            "blockId": "air",
+            "count": 4960
+          }
+        ]
+      }
+    ],
+    "organPolicy": {
+      "mode": "merge_by_material_and_tag",
+      "maxOrgans": 32767,
+      "reserveOrganZeroForOutside": true,
+      "splitRules": [],
+      "fallback": {
+        "onTooManyOrgans": "reject_scene"
+      }
+    }
+  },
+  "materials": {
+    "air": {
+      "flukaName": "AIR",
+      "density": 0.00120479,
+      "label": "Air",
+      "color": "#cfe8ff"
+    },
+    "lead": {
+      "flukaName": "LEAD",
+      "density": 11.35,
+      "label": "Lead",
+      "color": "#4b5563"
+    },
+    "water": {
+      "flukaName": "WATER",
+      "density": 1.0,
+      "label": "Water",
+      "color": "#38bdf8"
+    },
+    "concrete": {
+      "flukaName": "CONCRETE",
+      "density": 2.3,
+      "label": "Concrete",
+      "color": "#9ca3af"
+    },
+    "silicon": {
+      "flukaName": "SILICON",
+      "density": 2.329,
+      "label": "Silicon",
+      "color": "#f59e0b"
+    }
+  },
+  "sources": [
+    {
+      "id": "photon_beam",
+      "type": "photon_beam",
+      "particle": "photon",
+      "energyGeV": 0.001,
+      "positionCm": [
+        81.6666666667,
+        41.6666666667,
+        -10
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "scoring": [
+    {
+      "id": "dose_map",
+      "type": "usrbin_cartesian",
+      "quantity": "DOSE",
+      "dims": [
+        48,
+        24,
+        24
+      ],
+      "minCm": [
+        0,
+        0,
+        0
+      ],
+      "maxCm": [
+        160,
+        80,
+        80
+      ]
+    }
+  ],
+  "run": {
+    "defaults": "PRECISIO",
+    "histories": 100000,
+    "randomSeed": 12345,
+    "cycles": 1,
+    "validation": {
+      "geometryDebug": true
+    }
+  },
+  "emit": {
+    "backend": "fluka_voxel",
+    "flukaInput": {
+      "filename": "scene.inp",
+      "title": "Oops-enheimer water phantom behind lead collimator",
+      "includeComments": true
+    },
+    "voxelFile": {
+      "filename": "scene.vxl",
+      "format": "fluka_unformatted_vxl",
+      "compactOrganIds": true
+    },
+    "manifest": {
+      "filename": "scene.map.json",
+      "includeVoxelToOrganMap": false,
+      "includeOrganToRegionMap": true,
+      "includeMaterialMap": true
+    }
+  }
+}
