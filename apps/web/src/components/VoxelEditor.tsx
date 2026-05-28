@@ -314,15 +314,19 @@ export function VoxelEditor({ initialSceneId = null, initialSceneJson = null }: 
                 onClick={() => setEditorMode(mode)}
                 type="button"
               >
-                {mode === "orbit" ? "Պտտում" : "Քայլք"}
+                {mode === "orbit" ? "Պտտում" : "Թռիչք"}
               </button>
             ))}
           </div>
           <span className="muted">
-            {editorMode === "walk" ? (isWalkPointerLocked ? "քայլքի ռեժիմ" : "քայլքը պատրաստ է") : isEditLocked ? "խմբագրումը կողպված է" : `Z ${sliceIndex}`}
+            {editorMode === "walk" ? (isWalkPointerLocked ? "թռիչքի ռեժիմ" : "թռիչքը պատրաստ է") : isEditLocked ? "խմբագրումը կողպված է" : `Z ${sliceIndex}`}
           </span>
         </div>
-        <div className={`voxel-stage ${editorMode === "walk" ? "walk-mode" : ""}`} aria-label="Վոքսելային խմբագրի 3D նախադիտում">
+        <div
+          className={`voxel-stage ${editorMode === "walk" ? "walk-mode" : ""}`}
+          aria-label="Վոքսելային խմբագրի 3D նախադիտում"
+          onContextMenu={(event) => event.preventDefault()}
+        >
           <Canvas camera={{ position: [34, 24, 34], fov: 70 }} shadows>
             <color attach="background" args={["#141813"]} />
             <Environment preset="warehouse" />
@@ -754,10 +758,10 @@ function EmptySliceBuildPlane({
     return null;
   }
 
-  function editFromPoint(event: ThreeEvent<PointerEvent>) {
+  function editFromPoint(event: ThreeEvent<PointerEvent>, mode: VoxelEditMode) {
     const x = Math.min(dims[0] - 1, Math.max(0, Math.floor(event.point.x + dims[0] / 2)));
     const y = Math.min(dims[1] - 1, Math.max(0, Math.floor(event.point.y + dims[1] / 2)));
-    onEdit(x, y, sliceIndex, event.nativeEvent.shiftKey ? "erase" : "paint");
+    onEdit(x, y, sliceIndex, mode);
   }
 
   return (
@@ -767,15 +771,20 @@ function EmptySliceBuildPlane({
           if (!paintingEnabled) {
             return;
           }
-          event.stopPropagation();
-          editFromPoint(event);
-        }}
-        onPointerMove={(event) => {
-          if (!paintingEnabled || event.nativeEvent.buttons !== 1) {
+          const mode = editModeFromPointerButton(event.nativeEvent.button);
+          if (!mode) {
             return;
           }
           event.stopPropagation();
-          editFromPoint(event);
+          editFromPoint(event, mode);
+        }}
+        onPointerMove={(event) => {
+          const mode = editModeFromPointerButtons(event.nativeEvent.buttons);
+          if (!paintingEnabled || !mode) {
+            return;
+          }
+          event.stopPropagation();
+          editFromPoint(event, mode);
         }}
       >
         <planeGeometry args={[dims[0], dims[1], dims[0], dims[1]]} />
@@ -881,8 +890,9 @@ function VoxelInstances({
       ref={meshRef}
       args={[undefined, undefined, voxels.length]}
       castShadow
-      onClick={(event) => {
-        if (!editingEnabled) {
+      onPointerDown={(event) => {
+        const mode = editModeFromPointerButton(event.nativeEvent.button);
+        if (!editingEnabled || !mode) {
           return;
         }
         event.stopPropagation();
@@ -890,15 +900,16 @@ function VoxelInstances({
           return;
         }
         const voxel = voxels[event.instanceId];
-        editVoxelFace(voxel, event, onEdit);
+        editVoxelFace(voxel, event, onEdit, mode);
       }}
       onPointerEnter={(event: ThreeEvent<PointerEvent>) => {
-        if (!editingEnabled || event.nativeEvent.buttons !== 1 || event.instanceId === undefined) {
+        const mode = editModeFromPointerButtons(event.nativeEvent.buttons);
+        if (!editingEnabled || !mode || event.instanceId === undefined) {
           return;
         }
         event.stopPropagation();
         const voxel = voxels[event.instanceId];
-        editVoxelFace(voxel, event, onEdit);
+        editVoxelFace(voxel, event, onEdit, mode);
       }}
       receiveShadow
     >
@@ -912,8 +923,9 @@ function editVoxelFace(
   voxel: VoxelInstance,
   event: ThreeEvent<MouseEvent | PointerEvent>,
   onEdit: (x: number, y: number, z: number, mode: VoxelEditMode) => void,
+  mode: VoxelEditMode,
 ) {
-  if (event.nativeEvent.shiftKey) {
+  if (mode === "erase") {
     onEdit(voxel.x, voxel.y, voxel.z, "erase");
     return;
   }
@@ -925,6 +937,26 @@ function editVoxelFace(
     voxel.z + Math.round(normal.z),
     "paint",
   );
+}
+
+function editModeFromPointerButton(button: number): VoxelEditMode | null {
+  if (button === 0) {
+    return "paint";
+  }
+  if (button === 2) {
+    return "erase";
+  }
+  return null;
+}
+
+function editModeFromPointerButtons(buttons: number): VoxelEditMode | null {
+  if ((buttons & 2) === 2) {
+    return "erase";
+  }
+  if ((buttons & 1) === 1) {
+    return "paint";
+  }
+  return null;
 }
 
 function applyFirstPersonRotation(camera: THREE.Camera, yaw: number, pitch: number) {
@@ -1449,7 +1481,7 @@ function buildSceneJson(grid: MaterialId[], beamSettings: BeamSettings): Record<
       backend: "fluka_voxel",
       flukaInput: {
         filename: "scene.inp",
-        title: "Օփսենհայմերի խմբագրով ստեղծված տեսարան",
+        title: "Oosenhaimer-ի խմբագրով ստեղծված տեսարան",
         includeComments: true,
       },
       voxelFile: {

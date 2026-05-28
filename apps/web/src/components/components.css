@@ -130,8 +130,8 @@
   display: grid;
   justify-items: center;
   gap: 8px;
-  width: min(230px, calc(100vw - 188px));
-  min-width: 132px;
+  width: auto;
+  min-width: max-content;
   padding: 8px;
   border: 1px solid rgba(215, 255, 97, 0.3);
   border-radius: 6px;
@@ -141,9 +141,9 @@
 }
 
 .run-button {
-  width: 100%;
-  min-width: 0;
-  padding: 0 14px;
+  width: auto;
+  min-width: max-content;
+  padding: 0 16px;
   white-space: nowrap;
 }
 
@@ -467,7 +467,7 @@
 
 .editor-mode-toggle {
   display: inline-grid;
-  grid-template-columns: repeat(2, 64px);
+  grid-template-columns: repeat(2, max-content);
   border: 1px solid var(--line);
   border-radius: 4px;
   overflow: hidden;
@@ -475,6 +475,7 @@
 
 .editor-mode-toggle button {
   min-height: 30px;
+  padding: 0 12px;
   border: 0;
   border-right: 1px solid var(--line);
   color: var(--muted);
@@ -989,7 +990,6 @@
 @media (max-width: 680px) {
   .editor-run-panel {
     top: 56px;
-    width: min(230px, calc(100vw - 28px));
   }
 
   .examples-modal-backdrop {

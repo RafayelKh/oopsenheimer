@@ -15,7 +15,7 @@ from app.schemas import ArtifactList, HealthResponse, SceneRecord, SimulationCre
 from app.services.queue import enqueue_simulation
 from app.services.store import InMemoryStore
 
-app = FastAPI(title="Օփսենհայմեր API", version="0.0.0")
+app = FastAPI(title="Oosenhaimer API", version="0.0.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://127.0.0.1:3000", "http://localhost:3000"],
@@ -152,7 +152,7 @@ def create_scene(payload: dict[str, Any]) -> SceneRecord:
     scene_json = payload.get("sceneJson") or payload
 
     if not isinstance(scene_json, dict) or scene_json.get("schema") != "oopsenheimer.scene.v1":
-        raise HTTPException(status_code=422, detail="Սպասվում է Օփսենհայմերի տեսարանի JSON։")
+        raise HTTPException(status_code=422, detail="Սպասվում է Oosenhaimer-ի տեսարանի JSON։")
 
     return store.create_scene(scene_json)
 
