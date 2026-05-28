@@ -17,6 +17,9 @@ class WorkerSettings(BaseSettings):
     celery_task_always_eager: bool = Field(default=True, alias="OOPSENHEIMER_CELERY_TASK_ALWAYS_EAGER")
     storage_root: Path = Field(default=Path("storage"), alias="STORAGE_ROOT")
     sim_mode: str = Field(default="mock", alias="OOPSENHEIMER_SIM_MODE")
+    fluka_timeout_seconds: int = Field(default=900, ge=1, alias="OOPSENHEIMER_FLUKA_TIMEOUT_SECONDS")
+    fluka_stall_timeout_seconds: int = Field(default=180, ge=0, alias="OOPSENHEIMER_FLUKA_STALL_TIMEOUT_SECONDS")
+    max_histories: int = Field(default=5000, ge=1, alias="OOPSENHEIMER_MAX_HISTORIES")
 
 
 settings = WorkerSettings()

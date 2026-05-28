@@ -43,6 +43,9 @@ services:
       CELERY_RESULT_BACKEND: redis://redis:6379/0
       FLUKA_BIN: /usr/local/fluka/bin
       OOPSENHEIMER_CELERY_TASK_ALWAYS_EAGER: "false"
+      OOPSENHEIMER_FLUKA_STALL_TIMEOUT_SECONDS: "180"
+      OOPSENHEIMER_FLUKA_TIMEOUT_SECONDS: "900"
+      OOPSENHEIMER_MAX_HISTORIES: "5000"
       OOPSENHEIMER_SIM_MODE: fluka
       STORAGE_ROOT: /data/oopsenheimer
     volumes:

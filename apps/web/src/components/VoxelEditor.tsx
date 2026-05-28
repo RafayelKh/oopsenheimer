@@ -1472,7 +1472,7 @@ function buildSceneJson(grid: MaterialId[], beamSettings: BeamSettings): Record<
     ],
     run: {
       defaults: "PRECISIO",
-      histories: 100000,
+      histories: 1000,
       randomSeed: 12345,
       cycles: 1,
       validation: { geometryDebug: true },

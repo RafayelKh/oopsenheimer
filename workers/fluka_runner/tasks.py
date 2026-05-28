@@ -125,7 +125,7 @@ def _compile_scene(simulation_id: str) -> dict:
         from oopsenheimer_compiler.organ_map import build_organ_map
         from oopsenheimer_compiler.schema import SceneDefinition
 
-        scene = SceneDefinition.model_validate_json(scene_path.read_text())
+        scene = SceneDefinition.model_validate(_scene_json_with_runtime_limits(scene_path))
         block_grid = expand_chunks(scene)
         material_grid = resolve_materials(scene, block_grid).material_grid
         organ_map = build_organ_map(scene, block_grid, material_grid)
@@ -181,7 +181,8 @@ def _run_fluka(simulation_id: str) -> dict:
                 job_dir=directory,
                 input_file="scene.inp",
                 cycles=1,
-                timeout_seconds=3600,
+                timeout_seconds=settings.fluka_timeout_seconds,
+                stall_timeout_seconds=settings.fluka_stall_timeout_seconds,
             )
         finally:
             stop_monitor.set()
@@ -263,6 +264,15 @@ def _read_fluka_progress_file(path: Path) -> tuple[int, int] | None:
         if total > 0:
             return handled, total
     return None
+
+
+def _scene_json_with_runtime_limits(scene_path: Path) -> dict[str, Any]:
+    scene_json = json.loads(scene_path.read_text())
+    run_settings = scene_json.setdefault("run", {})
+    histories = int(run_settings.get("histories") or 0)
+    if histories > settings.max_histories:
+        run_settings["histories"] = settings.max_histories
+    return scene_json
 
 
 def _has_usrbin_output(result: Any) -> bool:

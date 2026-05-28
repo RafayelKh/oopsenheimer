@@ -153,6 +153,34 @@ def test_compile_scene_task_captures_errors(tmp_path, monkeypatch) -> None:
     assert "scene JSON not found" in status["errorMessage"]
 
 
+def test_compile_scene_task_caps_histories_for_runtime_safety(tmp_path, monkeypatch) -> None:
+    monkeypatch.setattr("tasks.settings.storage_root", tmp_path)
+    monkeypatch.setattr("tasks.settings.max_histories", 123)
+    simulation_id = "sim_capped"
+    scene_id = "scene_capped"
+    example_scene = Path(__file__).resolve().parents[3] / "packages" / "examples" / "lead_wall.scene.json"
+    scene_dir = tmp_path / "scenes" / scene_id
+    scene_dir.mkdir(parents=True)
+    (scene_dir / "scene.json").write_text(example_scene.read_text())
+    (tmp_path / "jobs" / simulation_id).mkdir(parents=True)
+    status_path(simulation_id).write_text(
+        json.dumps(
+            {
+                "simulationId": simulation_id,
+                "sceneId": scene_id,
+                "status": "queued",
+                "storagePath": str(tmp_path / "jobs" / simulation_id),
+            },
+            indent=2,
+        )
+        + "\n"
+    )
+
+    compile_scene_task(simulation_id)
+
+    assert "START            123" in (tmp_path / "jobs" / simulation_id / "scene.inp").read_text()
+
+
 def test_run_fluka_task_real_mode_fails_clearly_without_fluka_bin(tmp_path, monkeypatch) -> None:
     monkeypatch.setattr("tasks.settings.storage_root", tmp_path)
     monkeypatch.setattr("tasks.settings.sim_mode", "fluka")
@@ -202,7 +230,7 @@ def test_mocked_rfluka_success_reaches_parsing(tmp_path, monkeypatch) -> None:
 
     import runner
 
-    def fake_run_rfluka(job_dir, input_file, cycles, timeout_seconds):
+    def fake_run_rfluka(job_dir, input_file, cycles, timeout_seconds, stall_timeout_seconds=None):
         return SimpleNamespace(exit_code=0)
 
     monkeypatch.setattr(runner, "run_rfluka", fake_run_rfluka)
@@ -238,7 +266,7 @@ def test_rfluka_nonzero_with_usrbin_output_reaches_parsing(tmp_path, monkeypatch
 
     import runner
 
-    def fake_run_rfluka(job_dir, input_file, cycles, timeout_seconds):
+    def fake_run_rfluka(job_dir, input_file, cycles, timeout_seconds, stall_timeout_seconds=None):
         return SimpleNamespace(exit_code=12, output_files=[usrbin])
 
     monkeypatch.setattr(runner, "run_rfluka", fake_run_rfluka)
@@ -282,7 +310,7 @@ def test_rfluka_nonzero_reports_scene_error_log(tmp_path, monkeypatch) -> None:
 
     import runner
 
-    def fake_run_rfluka(job_dir, input_file, cycles, timeout_seconds):
+    def fake_run_rfluka(job_dir, input_file, cycles, timeout_seconds, stall_timeout_seconds=None):
         return SimpleNamespace(
             exit_code=12,
             output_files=[],
